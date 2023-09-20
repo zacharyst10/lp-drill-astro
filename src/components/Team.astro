@@ -3,19 +3,19 @@ import { Image } from "astro:assets";
 import emmaPaskett from "../assets/emma-paskett-headshot.jpg";
 const teamMembers = [
   {
-    imageSrc: "test",
+    image: emmaPaskett,
     name: "Bella LeBaron",
     role: "President",
     grade: "Senior",
   },
   {
-    imageSrc: emmaPaskett.src,
+    image: emmaPaskett,
     name: "Emma Paskett",
     role: "Co-Founder / CEO",
     grade: "Toronto, Canada",
   },
   {
-    imageSrc: "test",
+    image: emmaPaskett,
     name: "Leslie Alexander",
     role: "Co-Founder / CEO",
     grade: "Toronto, Canada",
@@ -44,7 +44,7 @@ const teamMembers = [
         teamMembers.map((member) => (
           <li>
             <Image
-              src={emmaPaskett}
+              src={member.image}
               alt={member.name}
               class="aspect-[14/13] w-full rounded-2xl object-cover"
             />
