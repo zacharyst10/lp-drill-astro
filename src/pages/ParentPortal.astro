@@ -1,0 +1,58 @@
+<!-- ... other parts of the document ... -->
+<div class="max-w-md mx-auto">
+  <div class="bg-white shadow-md rounded p-8" id="passwordContainer">
+    <!-- Password Input -->
+    <div id="passwordPrompt">
+      <h1 class="text-xl font-semibold mb-4">Parent Portal</h1>
+      <input
+        type="password"
+        class="p-2 border rounded w-full mb-4"
+        placeholder="Enter password"
+        id="passwordInput"
+      />
+      <button
+        class="p-2 bg-blue-500 text-white rounded w-full"
+        id="submitButton"
+      >
+        Submit
+      </button>
+    </div>
+
+    <!-- Protected Content -->
+    <div id="protectedContent" style="display: none;">
+      <h1 class="text-xl font-semibold mb-4">Welcome!</h1>
+      <p>Here is the information for parents...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctPassword = "password123"; // Change this to your desired password
+
+  function checkPassword() {
+    const inputElement = document.getElementById("passwordInput");
+
+    // Assert that the element is an HTMLInputElement
+    const inputPassword = (inputElement as HTMLInputElement).value;
+    if (inputPassword === correctPassword) {
+      const passwordPrompt = document.getElementById("passwordPrompt");
+      const protectedContent = document.getElementById("protectedContent");
+
+      // Check and assert that the elements are not null
+      if (passwordPrompt && protectedContent) {
+        passwordPrompt.style.display = "none";
+        protectedContent.style.display = "block";
+      }
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  }
+
+  // Bind the checkPassword function to the button
+  const submitButton = document.getElementById("submitButton");
+  if (submitButton) {
+    submitButton.addEventListener("click", checkPassword);
+  }
+</script>
+
+<!-- ... other parts of the document ... -->
