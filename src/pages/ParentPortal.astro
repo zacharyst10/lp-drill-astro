@@ -1,30 +1,36 @@
-<!-- ... other parts of the document ... -->
-<div class="max-w-md mx-auto">
-  <div class="bg-white shadow-md rounded p-8" id="passwordContainer">
-    <!-- Password Input -->
-    <div id="passwordPrompt">
-      <h1 class="text-xl font-semibold mb-4">Parent Portal</h1>
-      <input
-        type="password"
-        class="p-2 border rounded w-full mb-4"
-        placeholder="Enter password"
-        id="passwordInput"
-      />
-      <button
-        class="p-2 bg-blue-500 text-white rounded w-full"
-        id="submitButton"
-      >
-        Submit
-      </button>
-    </div>
+---
+import Layout from "../layouts/Layout.astro";
+---
 
-    <!-- Protected Content -->
-    <div id="protectedContent" style="display: none;">
-      <h1 class="text-xl font-semibold mb-4">Welcome!</h1>
-      <p>Here is the information for parents...</p>
+<Layout title="Parent Portal">
+  <!-- ... other parts of the document ... -->
+  <div class="max-w-md mx-auto">
+    <div class="bg-white shadow-md rounded p-8" id="passwordContainer">
+      <!-- Password Input -->
+      <div id="passwordPrompt">
+        <h1 class="text-xl font-semibold mb-4">Parent Portal</h1>
+        <input
+          type="password"
+          class="p-2 border rounded w-full mb-4"
+          placeholder="Enter password"
+          id="passwordInput"
+        />
+        <button
+          class="p-2 bg-blue-500 text-white rounded w-full"
+          id="submitButton"
+        >
+          Submit
+        </button>
+      </div>
+
+      <!-- Protected Content -->
+      <div id="protectedContent" style="display: none;">
+        <h1 class="text-xl font-semibold mb-4">Welcome!</h1>
+        <p>Here is the information for parents...</p>
+      </div>
     </div>
   </div>
-</div>
+</Layout>
 
 <script>
   const correctPassword = "password123"; // Change this to your desired password
