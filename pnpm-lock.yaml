@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/tailwind': ^5.0.0
   '@astrojs/vercel': ^5.0.1
+  '@tailwindcss/forms': ^0.5.6
   astro: ^3.1.1
   sharp: ^0.32.6
   tailwindcss: ^3.0.24
@@ -10,6 +11,7 @@ specifiers:
 dependencies:
   '@astrojs/tailwind': 5.0.0_c776t7iv6g2pvsetudu3rhumuy
   '@astrojs/vercel': 5.0.1_astro@3.1.1
+  '@tailwindcss/forms': 0.5.6_tailwindcss@3.3.3
   astro: 3.1.1
   sharp: 0.32.6
   tailwindcss: 3.3.3
@@ -815,6 +817,15 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: false
+
+  /@tailwindcss/forms/0.5.6_tailwindcss@3.3.3:
+    resolution: {integrity: sha512-Fw+2BJ0tmAwK/w01tEFL5TiaJBX1NLT1/YbWgvm7ws3Qcn11kiXxzNTEQDMs5V3mQemhB56l3u0i9dwdzSQldA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.3.3
     dev: false
 
   /@types/babel__core/7.20.2:
@@ -2594,6 +2605,11 @@ packages:
   /mimic-response/3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
+    dev: false
+
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
     dev: false
 
   /minimatch/3.1.2:
