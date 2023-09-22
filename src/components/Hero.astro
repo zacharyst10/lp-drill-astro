@@ -159,22 +159,22 @@ import LPDrill from "../assets/lp-drill-23.jpg";
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuButton = document.getElementById("menuToggle");
-      const closeMenuButton = document.getElementById("closeMenu");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      menuButton?.addEventListener("click", toggleMenu);
-      closeMenuButton?.addEventListener("click", toggleMenu);
-
-      function toggleMenu() {
-        if (mobileMenu?.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-        } else {
-          mobileMenu?.classList.add("hidden");
-        }
-      }
-    });
-  </script>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menuToggle");
+    const closeMenuButton = document.getElementById("closeMenu");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton?.addEventListener("click", toggleMenu);
+    closeMenuButton?.addEventListener("click", toggleMenu);
+
+    function toggleMenu() {
+      if (mobileMenu?.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+      } else {
+        mobileMenu?.classList.add("hidden");
+      }
+    }
+  });
+</script>
