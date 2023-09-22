@@ -1,15 +1,17 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
+import drill6 from "../assets/drill6.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Auditions">
   <Navbar />
   <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
-    <img
-      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+    <Image
+      src={drill6}
       alt=""
-      class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
+      class="aspect-[4/2] w-full object-cover xl:rounded-3xl"
     />
   </div>
   <!-- Values section -->
