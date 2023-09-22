@@ -58,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
 <script>
   const correctPassword = "password123";
 
-  function checkPassword(event) {
+  function checkPassword(event: Event) {
     event.preventDefault(); // Prevent form from submitting
     const inputElement = document.getElementById("passwordInput");
     const inputPassword = (inputElement as HTMLInputElement).value;
