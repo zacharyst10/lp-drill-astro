@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import LPDrill from "../assets/lp-drill-23.jpg";
+import logo from "../assets/logo.svg";
 ---
 
 <div class="">
@@ -12,11 +13,7 @@ import LPDrill from "../assets/lp-drill-23.jpg";
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
-          <img
-            class="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt=""
-          />
+          <Image class="h-20 w-auto text-primary" src={logo} alt="" />
         </a>
       </div>
       <div class="flex lg:hidden">
