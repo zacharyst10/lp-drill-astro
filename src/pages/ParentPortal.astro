@@ -1,8 +1,10 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Parent Portal">
+  <Navbar />
   <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <img
@@ -36,7 +38,7 @@ import Layout from "../layouts/Layout.astro";
 
         <div id="submitButtonContainer">
           <button
-            type="button"
+            type="submit"
             class="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primaryDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             id="submitButton"
           >
@@ -56,7 +58,8 @@ import Layout from "../layouts/Layout.astro";
 <script>
   const correctPassword = "password123";
 
-  function checkPassword() {
+  function checkPassword(event) {
+    event.preventDefault(); // Prevent form from submitting
     const inputElement = document.getElementById("passwordInput");
     const inputPassword = (inputElement as HTMLInputElement).value;
     if (inputPassword === correctPassword) {
@@ -75,8 +78,8 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
-  const submitButton = document.getElementById("submitButton");
-  if (submitButton) {
-    submitButton.addEventListener("click", checkPassword);
+  const form = document.getElementById("passwordForm");
+  if (form) {
+    form.addEventListener("submit", checkPassword);
   }
 </script>
