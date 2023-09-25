@@ -1,5 +1,5 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import { teamMembers } from "../../components/Team.astro";
 
 export function getStaticPaths() {
@@ -13,5 +13,5 @@ const member = teamMembers.find((member) => member.name === dancer);
 <div>
   work in progress
   <h1>Dancer {dancer}</h1>
-  {member && <Image src={member.image} alt="alt" />}
+  {member && <Image src={member.image} alt={`${member.name}`} />}
 </div>
