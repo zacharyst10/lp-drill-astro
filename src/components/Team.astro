@@ -28,7 +28,7 @@ import KiahSchofield from "../assets/KiahSchofieldHeadshot.jpg";
 import AubreyAllan from "../assets/AubreyAllanHeadshot.jpg";
 import favicon from "../assets/favicon.svg";
 
-const teamMembers = [
+export const teamMembers = [
   {
     image: BellaLeBaron,
     name: "Bella LeBaron",
@@ -216,17 +216,19 @@ const teamMembers = [
       {
         teamMembers.map((member) => (
           <li>
-            <Image
-              src={member.image}
-              alt={member.name}
-              class=" w-full rounded-2xl object-cover"
-              loading="lazy"
-            />
-            <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-black">
-              {member.name}
-            </h3>
-            <p class="text-base leading-7 text-black">{member.role}</p>
-            <p class="text-sm leading-6 text-black">{member.grade}</p>
+            <a href={`dancers/${member.name}`}>
+              <Image
+                src={member.image}
+                alt={member.name}
+                class=" w-full rounded-2xl object-cover"
+                loading="lazy"
+              />
+              <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-black">
+                {member.name}
+              </h3>
+              <p class="text-base leading-7 text-black">{member.role}</p>
+              <p class="text-sm leading-6 text-black">{member.grade}</p>
+            </a>
           </li>
         ))
       }

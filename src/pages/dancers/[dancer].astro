@@ -1,0 +1,13 @@
+---
+import { teamMembers } from "../../components/Team.astro";
+
+export function getStaticPaths() {
+  return teamMembers.map((member) => ({ params: { dancer: member.name } }));
+}
+
+const { dancer } = Astro.params;
+---
+
+<div>
+  <h1>Dancer {dancer}</h1>
+</div>
