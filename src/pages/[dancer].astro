@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { teamMembers } from "../../components/Team.astro";
-import Layout from "../../layouts/Layout.astro";
+import { teamMembers } from "../components/Team.astro";
+import Layout from "../layouts/Layout.astro";
 
 export function getStaticPaths() {
   return teamMembers.map((member) => ({ params: { dancer: member.name } }));
@@ -12,7 +12,7 @@ const member = teamMembers.find((member) => member.name === dancer);
 ---
 
 <!-- make the image a card -->
-<Layout title={`Dancer ${dancer}`}>
+<Layout title={` ${dancer}`}>
   <div>
     work in progress
     <h1 transition:name="dancer">Dancer {dancer}</h1>
@@ -23,6 +23,7 @@ const member = teamMembers.find((member) => member.name === dancer);
         member && (
           <Image
             transition:name="img"
+            transition:animate="slide"
             src={member.image}
             alt={`${member.name}`}
           />
