@@ -215,12 +215,14 @@ export const teamMembers = [
         teamMembers.map((member) => (
           <li>
             <a href={`dancers/${member.name}`}>
-              <Image
-                src={member.image}
-                alt={member.name}
-                class=" w-full rounded-2xl object-cover"
-                loading="lazy"
-              />
+              <div class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-xl bg-gray-200 focus-within:ring-2 focus-within:ring-green8 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  class="pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
               <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-black">
                 {member.name}
               </h3>
