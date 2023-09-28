@@ -42,24 +42,9 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
   <div id="protectedContent" class="mt-6 text-center" style="display: none;">
-    <!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
     <div>
       <div class="sm:hidden">
         <label for="tabs" class="sr-only">Select a tab</label>
-        <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
         <select
           id="tabs"
           name="tabs"
