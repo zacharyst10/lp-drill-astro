@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
 interface Props {
   title: string;
 }
@@ -20,6 +21,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-screen" transition:animate="fade">
+    <Navbar />
     <div class="flex-grow">
       <slot />
     </div>
