@@ -106,7 +106,7 @@ import logo from "../assets/logo.svg";
             <div class="-my-6 divide-y divide-gray-500/25">
               <div class="space-y-2 py-6">
                 <a
-                  href="/"
+                  href="Team"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >About</a
                 >
@@ -144,44 +144,20 @@ import logo from "../assets/logo.svg";
       </div>
     </nav>
   </header>
-  <script>
-    function initializeListeners() {
-      console.log("Initializing listeners!");
-
-      const menuButton = document.querySelector(".menu-button-selector"); // Adjust your selector
-      const closeButton = document.querySelector(".close-button-selector"); // Adjust your selector
-      const menu = document.querySelector(".menu-selector"); // Adjust your selector
-
-      if (menuButton) {
-        menuButton.addEventListener("click", function () {
-          console.log("Menu Button Clicked!");
-          // Open the menu here
-          if (menu) menu.classList.toggle("hidden"); // or any other logic to open the menu
-        });
-      }
-
-      if (closeButton) {
-        closeButton.addEventListener("click", function () {
-          console.log("Close Button Clicked!");
-          // Close the menu here
-          if (menu) menu.classList.add("hidden"); // or any other logic to close the menu
-        });
-      }
-
-      document.body.addEventListener("click", function (e) {
-        if (!menu || !closeButton) return;
-        const target = e.target;
-        if (!menu.contains(target) && !closeButton.contains(target)) {
-          console.log("Outside Clicked!");
-          menu.classList.add("hidden"); // or any other logic to close the menu on outside click
-        }
-      });
-    }
-
-    // Initialize listeners when the DOM content is loaded
-    document.addEventListener("DOMContentLoaded", initializeListeners);
-
-    // Reattach listeners if content is changed
-    window.addEventListener("popstate", initializeListeners);
-  </script>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    menuToggle?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+
+    closeMenu?.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+</script>
