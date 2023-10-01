@@ -106,31 +106,26 @@ import logo from "../assets/logo.svg";
             <div class="-my-6 divide-y divide-gray-500/25">
               <div class="space-y-2 py-6">
                 <a
-                  data-astro-reload
                   href="Team"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >About</a
                 >
                 <a
-                  data-astro-reload
                   href="Events"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >Events</a
                 >
                 <a
-                  data-astro-reload
                   href="Auditions"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >Auditions</a
                 >
                 <a
-                  data-astro-reload
                   href="Donate"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >Donate</a
                 >
                 <a
-                  data-astro-reload
                   href="Alumni"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >Alumni</a
@@ -138,7 +133,6 @@ import logo from "../assets/logo.svg";
               </div>
               <div class="py-6">
                 <a
-                  data-astro-reload
                   href="/ParentPortal"
                   class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >Parent Portal</a
@@ -152,7 +146,7 @@ import logo from "../assets/logo.svg";
   </header>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", (event) => {
+  function initializeMenu() {
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const closeMenu = document.getElementById("closeMenu");
@@ -164,5 +158,13 @@ import logo from "../assets/logo.svg";
     closeMenu?.addEventListener("click", () => {
       mobileMenu?.classList.add("hidden");
     });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeMenu();
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeMenu();
   });
 </script>
