@@ -44,12 +44,14 @@ import Layout from "../layouts/Layout.astro";
         name="tabs"
         class="block w-full rounded-md border-gray-300 focus:border-primary focus:ring-primary"
       >
-        <option selected>Calendars</option>
-        <option>Fee Due Dates</option>
-        <option>Nationals</option>
-        <option>Drill Family Directory</option>
-        <option>Summer Schedule for 2024-2025 team</option>
-        <option>Register My Athlete</option>
+        <option id="calendars" value="calendars" selected>Calendars</option>
+        <option id="fee" value="fee">Fee Due Dates</option>
+        <option id="nationals" value="nationals">Nationals</option>
+        <option id="directory" value="directory">Drill Family Directory</option>
+        <option id="schedule" value="schedule"
+          >Summer Schedule for 2024-2025 team</option
+        >
+        <option id="register" value="register">Register My Athlete</option>
       </select>
     </div>
     <div class="hidden sm:block">
@@ -132,53 +134,72 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </div>
-</Layout>
+  <script>
+    const correctPassword = "1234";
 
-<script>
-  const correctPassword = "1234";
-
-  function checkPassword(event: Event) {
-    event.preventDefault(); // Prevent form from submitting
-    const inputElement = document.getElementById("passwordInput");
-    const inputPassword = (inputElement as HTMLInputElement).value;
-    if (inputPassword === correctPassword) {
-      const passwordPrompt = document.getElementById("passwordPrompt");
-      const protectedContent = document.getElementById("protectedContent");
-      const submitButtonContainer = document.getElementById(
-        "submitButtonContainer"
-      );
-      if (passwordPrompt && protectedContent && submitButtonContainer) {
-        passwordPrompt.style.display = "none";
-        protectedContent.style.display = "block";
-        submitButtonContainer.style.display = "none";
+    function checkPassword(event: Event) {
+      event.preventDefault(); // Prevent form from submitting
+      const inputElement = document.getElementById("passwordInput");
+      const inputPassword = (inputElement as HTMLInputElement).value;
+      if (inputPassword === correctPassword) {
+        const passwordPrompt = document.getElementById("passwordPrompt");
+        const protectedContent = document.getElementById("protectedContent");
+        const submitButtonContainer = document.getElementById(
+          "submitButtonContainer"
+        );
+        if (passwordPrompt && protectedContent && submitButtonContainer) {
+          passwordPrompt.style.display = "none";
+          protectedContent.style.display = "block";
+          submitButtonContainer.style.display = "none";
+        }
+      } else {
+        alert("Incorrect password. Please try again.");
       }
-    } else {
-      alert("Incorrect password. Please try again.");
     }
-  }
 
-  const form = document.getElementById("passwordForm");
-  if (form) {
-    form.addEventListener("submit", checkPassword);
-  }
+    const form = document.getElementById("passwordForm");
+    if (form) {
+      form.addEventListener("submit", checkPassword);
+    }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const tabs = document.querySelectorAll(".tab");
-    const contents = document.querySelectorAll(".tab-content");
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
-        tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
-        tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
+          tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
+          tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
 
-        contents.forEach((c) => c.classList.add("hidden"));
+          contents.forEach((c) => c.classList.add("hidden"));
 
-        tab.classList.add("text-gray-900", "bg-white");
-        tab.children[1].classList.remove("bg-transparent");
-        tab.children[1].classList.add("bg-primary");
-        contents[index].classList.remove("hidden");
+          tab.classList.add("text-gray-900", "bg-white");
+          tab.children[1].classList.remove("bg-transparent");
+          tab.children[1].classList.add("bg-primary");
+          contents[index].classList.remove("hidden");
+        });
       });
     });
-  });
-</script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const selectElement = document.getElementById("tabs");
+
+      if (selectElement) {
+        selectElement.addEventListener("change", (event) => {
+          const selectedValue = (event?.target as HTMLSelectElement)?.value;
+          // Here, selectedValue should match the id of the content section you want to display.
+
+          const contents = document.querySelectorAll(".tab-content");
+          contents.forEach((content) => {
+            if (content.id === selectedValue) {
+              content.classList.remove("hidden"); // show the selected content section
+            } else {
+              content.classList.add("hidden"); // hide other content sections
+            }
+          });
+        });
+      }
+    });
+  </script>
+</Layout>
