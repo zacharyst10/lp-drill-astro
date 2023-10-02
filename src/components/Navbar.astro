@@ -144,27 +144,27 @@ import logo from "../assets/logo.svg";
       </div>
     </nav>
   </header>
+  <script>
+    function initializeMenu() {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const closeMenu = document.getElementById("closeMenu");
+
+      menuToggle?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+      });
+
+      closeMenu?.addEventListener("click", () => {
+        mobileMenu?.classList.add("hidden");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeMenu();
+    });
+
+    document.addEventListener("astro:after-swap", () => {
+      initializeMenu();
+    });
+  </script>
 </div>
-<script>
-  function initializeMenu() {
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const closeMenu = document.getElementById("closeMenu");
-
-    menuToggle?.addEventListener("click", () => {
-      mobileMenu?.classList.toggle("hidden");
-    });
-
-    closeMenu?.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    initializeMenu();
-  });
-
-  document.addEventListener("astro:after-swap", () => {
-    initializeMenu();
-  });
-</script>
