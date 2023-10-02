@@ -135,71 +135,78 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
   <script>
-    const correctPassword = "1234";
-
-    function checkPassword(event: Event) {
-      event.preventDefault(); // Prevent form from submitting
-      const inputElement = document.getElementById("passwordInput");
-      const inputPassword = (inputElement as HTMLInputElement).value;
-      if (inputPassword === correctPassword) {
-        const passwordPrompt = document.getElementById("passwordPrompt");
-        const protectedContent = document.getElementById("protectedContent");
-        const submitButtonContainer = document.getElementById(
-          "submitButtonContainer"
-        );
-        if (passwordPrompt && protectedContent && submitButtonContainer) {
-          passwordPrompt.style.display = "none";
-          protectedContent.style.display = "block";
-          submitButtonContainer.style.display = "none";
-        }
-      } else {
-        alert("Incorrect password. Please try again.");
-      }
-    }
-
-    const form = document.getElementById("passwordForm");
-    if (form) {
-      form.addEventListener("submit", checkPassword);
-    }
-
     document.addEventListener("DOMContentLoaded", () => {
+      setupListeners();
+    });
+
+    document.addEventListener("astro:after-swap", () => {
+      setupListeners();
+    });
+
+    function setupListeners() {
+      // Password check logic
+      const correctPassword = "1234";
+      const form = document.getElementById("passwordForm");
+      if (form) {
+        form.removeEventListener("submit", checkPassword); // remove existing listener to avoid duplicates
+        form.addEventListener("submit", checkPassword);
+      }
+      function checkPassword(event: Event) {
+        event.preventDefault();
+        const inputElement = document.getElementById("passwordInput");
+        const inputPassword = (inputElement as HTMLInputElement).value;
+        if (inputPassword === correctPassword) {
+          const passwordPrompt = document.getElementById("passwordPrompt");
+          const protectedContent = document.getElementById("protectedContent");
+          const submitButtonContainer = document.getElementById(
+            "submitButtonContainer"
+          );
+          if (passwordPrompt && protectedContent && submitButtonContainer) {
+            passwordPrompt.style.display = "none";
+            protectedContent.style.display = "block";
+            submitButtonContainer.style.display = "none";
+          }
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+
+      // Tabs logic
       const tabs = document.querySelectorAll(".tab");
       const contents = document.querySelectorAll(".tab-content");
-
       tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => {
+        tab.removeEventListener("click", tabClick); // remove existing listener to avoid duplicates
+        tab.addEventListener("click", tabClick);
+
+        function tabClick() {
           tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
           tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
           tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
-
           contents.forEach((c) => c.classList.add("hidden"));
-
           tab.classList.add("text-gray-900", "bg-white");
           tab.children[1].classList.remove("bg-transparent");
           tab.children[1].classList.add("bg-primary");
           contents[index].classList.remove("hidden");
-        });
+        }
       });
-    });
 
-    document.addEventListener("DOMContentLoaded", () => {
+      // Dropdown logic
       const selectElement = document.getElementById("tabs");
-
       if (selectElement) {
-        selectElement.addEventListener("change", (event) => {
-          const selectedValue = (event?.target as HTMLSelectElement)?.value;
-          // Here, selectedValue should match the id of the content section you want to display.
+        selectElement.removeEventListener("change", selectChange); // remove existing listener to avoid duplicates
+        selectElement.addEventListener("change", selectChange);
 
-          const contents = document.querySelectorAll(".tab-content");
+        function selectChange(event) {
+          const selectedValue = (event?.target as HTMLSelectElement)?.value;
           contents.forEach((content) => {
             if (content.id === selectedValue) {
-              content.classList.remove("hidden"); // show the selected content section
+              content.classList.remove("hidden");
             } else {
-              content.classList.add("hidden"); // hide other content sections
+              content.classList.add("hidden");
             }
           });
-        });
+        }
       }
-    });
+    }
   </script>
 </Layout>
