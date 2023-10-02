@@ -12,7 +12,6 @@ import Layout from "../layouts/Layout.astro";
         Sign in to the Parent Portal
       </h2>
     </div>
-
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6" action="#" method="POST" id="passwordForm">
         <div id="passwordPrompt">
@@ -27,102 +26,109 @@ import Layout from "../layouts/Layout.astro";
             />
           </div>
         </div>
-
         <div id="submitButtonContainer">
           <button
             type="submit"
             class="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primaryDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            id="submitButton"
+            id="submitButton">Sign in</button
           >
-            Sign in
-          </button>
         </div>
       </form>
     </div>
   </div>
-  <div
-    id="protectedContent"
-    class="mt-6 text-center px-10"
-    style="display: none;"
-  >
-    <div>
-      <div class="sm:hidden">
-        <label for="tabs" class="sr-only">Select a tab</label>
-        <select
-          id="tabs"
-          name="tabs"
-          class="block w-full rounded-md border-gray-300 focus:border-primary focus:ring-primary"
+  <div id="protectedContent" class="mt-6 text-center px-10 hidden">
+    <div class="sm:hidden">
+      <label for="tabs" class="sr-only">Select a tab</label>
+      <select
+        id="tabs"
+        name="tabs"
+        class="block w-full rounded-md border-gray-300 focus:border-primary focus:ring-primary"
+      >
+        <option selected>Calendars</option>
+        <option>Fee Due Dates</option>
+        <option>Nationals</option>
+        <option>Drill Family Directory</option>
+        <option>Summer Schedule for 2024-2025 team</option>
+        <option>Register My Athlete</option>
+      </select>
+    </div>
+    <div class="hidden sm:block">
+      <nav
+        class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
+        aria-label="Tabs"
+      >
+        <a
+          href="#"
+          class="tab text-gray-900 bg-white rounded-l-lg group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
         >
-          <option selected>Calendars</option>
-          <option>Fee Due Dates</option>
-          <option>Nationals</option>
-          <option>Drill Family Directory</option>
-          <option>Summer Schedule for 2024-2025 team</option>
-          <option>Register My Athlete</option>
-        </select>
+          <span>Calendars</span>
+          <span
+            aria-hidden="true"
+            class="bg-primary absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
+        <a
+          href="#"
+          class="tab text-gray-500 bg-white group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+        >
+          <span>Fee Due Dates</span>
+          <span
+            aria-hidden="true"
+            class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
+        <a
+          href="#"
+          class="tab text-gray-500 bg-white group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+        >
+          <span>Nationals</span>
+          <span
+            aria-hidden="true"
+            class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
+        <a
+          href="#"
+          class="tab text-gray-500 bg-white rounded-r-lg group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+        >
+          <span>Drill Family Directory</span>
+          <span
+            aria-hidden="true"
+            class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
+        <a
+          href="#"
+          class="tab text-gray-500 bg-white rounded-r-lg group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+        >
+          <span>Summer Schedule for 2024-2025 team</span>
+          <span
+            aria-hidden="true"
+            class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
+        <a
+          href="#"
+          class="tab text-gray-500 bg-white rounded-r-lg group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+        >
+          <span>Register My Athlete</span>
+          <span
+            aria-hidden="true"
+            class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
+      </nav>
+    </div>
+    <div class="pt-5">
+      <div id="calendars" class="tab-content">Calendars content goes here.</div>
+      <div id="fee" class="tab-content hidden">
+        Fee Due Dates content goes here.
       </div>
-      <div class="hidden sm:block">
-        <nav
-          class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
-          aria-label="Tabs"
-        >
-          <!-- Current: "text-gray-900", Default: "text-gray-500 hover:text-gray-700" -->
-          <a
-            href="#"
-            class="text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
-            aria-current="page"
-          >
-            <span>Calendars</span>
-            <span
-              aria-hidden="true"
-              class="bg-primary absolute inset-x-0 bottom-0 h-0.5"></span>
-          </a>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
-          >
-            <span>Fee Due Dates</span>
-            <span
-              aria-hidden="true"
-              class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
-          </a>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
-          >
-            <span>Nationals</span>
-            <span
-              aria-hidden="true"
-              class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
-          </a>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
-          >
-            <span>Drill Family Directory</span>
-            <span
-              aria-hidden="true"
-              class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
-          </a>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
-          >
-            <span>Summer Schedule for 2024-2025 team</span>
-            <span
-              aria-hidden="true"
-              class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
-          </a>
-          <a
-            href="#"
-            class="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
-          >
-            <span>Register My Athlete</span>
-            <span
-              aria-hidden="true"
-              class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
-          </a>
-        </nav>
+      <div id="nationals" class="tab-content hidden">
+        Nationals content goes here.
+      </div>
+      <div id="directory" class="tab-content hidden">
+        Drill Family Directory content goes here.
+      </div>
+      <div id="schedule" class="tab-content hidden">
+        Summer Schedule for 2024-2025 team content goes here.
+      </div>
+      <div id="register" class="tab-content hidden">
+        Register My Athlete content goes here.
       </div>
     </div>
   </div>
@@ -155,4 +161,24 @@ import Layout from "../layouts/Layout.astro";
   if (form) {
     form.addEventListener("submit", checkPassword);
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
+        tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
+        tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
+
+        contents.forEach((c) => c.classList.add("hidden"));
+
+        tab.classList.add("text-gray-900", "bg-white");
+        tab.children[1].classList.remove("bg-transparent");
+        tab.children[1].classList.add("bg-primary");
+        contents[index].classList.remove("hidden");
+      });
+    });
+  });
 </script>
