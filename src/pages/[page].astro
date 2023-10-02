@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { teamMembers } from "./Team.astro";
+import { teamMembers } from "../components/Team.astro";
 import { Image } from "astro:assets";
 interface TeamMember {
   name: string;
@@ -34,7 +34,7 @@ const { page } = Astro.props;
                   alt={member.name}
                   class="h-auto w-full  pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={1}
-                  loading={"eager"}
+                  loading="eager"
                 />
               </div>
               <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-black">
