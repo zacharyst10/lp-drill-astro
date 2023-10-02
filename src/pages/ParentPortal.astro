@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
       </h2>
     </div>
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="#" id="passwordForm">
+      <form class="space-y-6" method="POST" id="passwordForm">
         <div id="passwordPrompt">
           <div class="mt-2">
             <input
@@ -140,72 +140,69 @@ import Layout from "../layouts/Layout.astro";
     });
 
     document.addEventListener("astro:after-swap", () => {
+      console.log("astro:after-swap is triggered");
       setupListeners();
     });
 
-    function setupListeners() {
-      // Password check logic
-      const correctPassword = "1234";
-      const form = document.getElementById("passwordForm");
-      if (form) {
-        form.removeEventListener("submit", checkPassword); // remove existing listener to avoid duplicates
-        form.addEventListener("submit", checkPassword);
+    const correctPassword = "1234";
+    const form = document.getElementById("passwordForm");
+    if (form) {
+      form.removeEventListener("submit", checkPassword); // remove existing listener to avoid duplicates
+      form.addEventListener("submit", checkPassword);
+    }
+    function checkPassword(event: Event) {
+      event.preventDefault();
+      console.log("checkPassword is triggered");
+
+      const inputElement = document.getElementById("passwordInput");
+      const inputPassword = (inputElement as HTMLInputElement).value;
+      if (inputPassword === correctPassword) {
+        const passwordPrompt = document.getElementById("passwordPrompt");
+        const protectedContent = document.getElementById("protectedContent");
+        const submitButtonContainer = document.getElementById(
+          "submitButtonContainer"
+        );
+        if (passwordPrompt && protectedContent && submitButtonContainer) {
+          passwordPrompt.style.display = "none";
+          protectedContent.style.display = "block";
+          submitButtonContainer.style.display = "none";
+        }
+      } else {
+        alert("Incorrect password. Please try again.");
       }
-      function checkPassword(event: Event) {
-        event.preventDefault();
-        const inputElement = document.getElementById("passwordInput");
-        const inputPassword = (inputElement as HTMLInputElement).value;
-        if (inputPassword === correctPassword) {
-          const passwordPrompt = document.getElementById("passwordPrompt");
-          const protectedContent = document.getElementById("protectedContent");
-          const submitButtonContainer = document.getElementById(
-            "submitButtonContainer"
-          );
-          if (passwordPrompt && protectedContent && submitButtonContainer) {
-            passwordPrompt.style.display = "none";
-            protectedContent.style.display = "block";
-            submitButtonContainer.style.display = "none";
+    }
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+    tabs.forEach((tab, index) => {
+      tab.removeEventListener("click", tabClick); // remove existing listener to avoid duplicates
+      tab.addEventListener("click", tabClick);
+
+      function tabClick() {
+        tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
+        tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
+        tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
+        contents.forEach((c) => c.classList.add("hidden"));
+        tab.classList.add("text-gray-900", "bg-white");
+        tab.children[1].classList.remove("bg-transparent");
+        tab.children[1].classList.add("bg-primary");
+        contents[index].classList.remove("hidden");
+      }
+    });
+
+    const selectElement = document.getElementById("tabs");
+    if (selectElement) {
+      selectElement.removeEventListener("change", selectChange); // remove existing listener to avoid duplicates
+      selectElement.addEventListener("change", selectChange);
+
+      function selectChange(event) {
+        const selectedValue = (event?.target as HTMLSelectElement)?.value;
+        contents.forEach((content) => {
+          if (content.id === selectedValue) {
+            content.classList.remove("hidden");
+          } else {
+            content.classList.add("hidden");
           }
-        } else {
-          alert("Incorrect password. Please try again.");
-        }
-      }
-
-      // Tabs logic
-      const tabs = document.querySelectorAll(".tab");
-      const contents = document.querySelectorAll(".tab-content");
-      tabs.forEach((tab, index) => {
-        tab.removeEventListener("click", tabClick); // remove existing listener to avoid duplicates
-        tab.addEventListener("click", tabClick);
-
-        function tabClick() {
-          tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
-          tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
-          tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
-          contents.forEach((c) => c.classList.add("hidden"));
-          tab.classList.add("text-gray-900", "bg-white");
-          tab.children[1].classList.remove("bg-transparent");
-          tab.children[1].classList.add("bg-primary");
-          contents[index].classList.remove("hidden");
-        }
-      });
-
-      // Dropdown logic
-      const selectElement = document.getElementById("tabs");
-      if (selectElement) {
-        selectElement.removeEventListener("change", selectChange); // remove existing listener to avoid duplicates
-        selectElement.addEventListener("change", selectChange);
-
-        function selectChange(event) {
-          const selectedValue = (event?.target as HTMLSelectElement)?.value;
-          contents.forEach((content) => {
-            if (content.id === selectedValue) {
-              content.classList.remove("hidden");
-            } else {
-              content.classList.add("hidden");
-            }
-          });
-        }
+        });
       }
     }
   </script>
