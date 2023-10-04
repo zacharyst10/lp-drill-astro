@@ -1,0 +1,14 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { coach: "sarah" } },
+    { params: { coach: "jerra" } },
+    { params: { coach: "natalie" } },
+    { params: { coach: "hailey" } },
+  ];
+}
+
+const { coach } = Astro.params;
+---
+
+<div>this is the page for: {coach}</div>
