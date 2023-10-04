@@ -44,38 +44,40 @@ export const coaches = [
         MEET THE COACHES
       </h2>
     </div>
-    <ul
-      role="list"
-      class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
-    >
-      <Card
-        href="/Sarah"
-        title={coaches[0].title}
-        role={coaches[0].role}
-        imageSrc={SarahMurphyHeadshot1}
-        body={coaches[0].body}
-      />
-      <Card
-        title={coaches[1].title}
-        role={coaches[1].role}
-        imageSrc={JerraStoutHeadshot}
-        body={coaches[1].body}
-        href="/Jerra"
-      />
-      <Card
-        title={coaches[2].title}
-        role={coaches[2].role}
-        imageSrc={NatalieZippiHeadshot}
-        body={coaches[2].body}
-        href="/Natalie"
-      />
-      <Card
-        title={coaches[3].title}
-        role={coaches[3].role}
-        imageSrc={HaileyBastianHeadshot}
-        body={coaches[3].body}
-        href="/Hailey"
-      />
-    </ul>
+    <div transition:name="hero">
+      <ul
+        role="list"
+        class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
+      >
+        <Card
+          href="/Sarah"
+          title={coaches[0].title}
+          role={coaches[0].role}
+          imageSrc={SarahMurphyHeadshot1}
+          body={coaches[0].body}
+        />
+        <Card
+          title={coaches[1].title}
+          role={coaches[1].role}
+          imageSrc={JerraStoutHeadshot}
+          body={coaches[1].body}
+          href="/Jerra"
+        />
+        <Card
+          title={coaches[2].title}
+          role={coaches[2].role}
+          imageSrc={NatalieZippiHeadshot}
+          body={coaches[2].body}
+          href="/Natalie"
+        />
+        <Card
+          title={coaches[3].title}
+          role={coaches[3].role}
+          imageSrc={HaileyBastianHeadshot}
+          body={coaches[3].body}
+          href="/Hailey"
+        />
+      </ul>
+    </div>
   </div>
 </div>

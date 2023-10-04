@@ -17,7 +17,10 @@ const { coachData } = Astro.props;
 ---
 
 <Layout title={coach?.toUpperCase() || "Coaches Page"}>
-  <div class="bg-white pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32">
+  <div
+    class="bg-white pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32"
+    transition:name="hero"
+  >
     <div class="bg-gray-900 pb-20 sm:pb-24 xl:pb-0">
       <div
         class="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch"
@@ -36,6 +39,12 @@ const { coachData } = Astro.props;
         <div
           class="w-full max-w-2xl xl:max-w-none xl:flex-auto xl:px-16 xl:py-24"
         >
+          <figcaption class="mt-8 text-base">
+            <div class="font-semibold text-white">
+              {coachData.title}
+            </div>
+            <div class="mt-1 text-gray-400">{coachData.role}</div>
+          </figcaption>
           <figure class="relative isolate pt-6 sm:pt-12">
             <blockquote
               class="text-xl font-semibold leading-8 text-white sm:text-md sm:leading-9"
@@ -44,10 +53,6 @@ const { coachData } = Astro.props;
                 {coachData.body}
               </p>
             </blockquote>
-            <figcaption class="mt-8 text-base">
-              <div class="font-semibold text-white">{coach}</div>
-              <div class="mt-1 text-gray-400">{coachData.role}</div>
-            </figcaption>
           </figure>
         </div>
       </div>
