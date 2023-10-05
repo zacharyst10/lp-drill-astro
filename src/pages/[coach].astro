@@ -3,6 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import { coaches } from "../components/Coaches.astro";
 import { Image } from "astro:assets";
 
+import SarahMurphyActionshot from "../assets/SarahMurphyActionshot.webp";
+import JerraStoutActionshot from "../assets/JerraStoutActionshot.webp";
+import NatalieZippiActionshot from "../assets/NatalieZippiActionshot.webp";
+import HaileyBastianActionshot from "../assets/HaileyBastianActionshot.webp";
+
 export async function getStaticPaths() {
   return coaches.map((coach) => {
     return {
@@ -29,7 +34,8 @@ const { coachData } = Astro.props;
             <Image
               transition:name="img"
               class="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl"
-              src={coachData.imageSrc}
+              src={coachData.imageSrcAction}
+              quality={1}
               alt={coachData.title}
             />
           </div>

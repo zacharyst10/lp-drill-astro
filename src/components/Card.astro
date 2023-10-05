@@ -18,9 +18,8 @@ const { href, title, role, body, imageSrc } = Astro.props;
       <Image
         class="w-52 flex-none rounded-2xl object-cover"
         src={imageSrc}
-        quality={"low"}
+        quality={1}
         alt={title}
-        loading="lazy"
       />
       <div class="flex-auto">
         <h2
