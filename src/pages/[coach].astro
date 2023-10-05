@@ -3,11 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import { coaches } from "../components/Coaches.astro";
 import { Image } from "astro:assets";
 
-import SarahMurphyActionshot from "../assets/SarahMurphyActionshot.webp";
-import JerraStoutActionshot from "../assets/JerraStoutActionshot.webp";
-import NatalieZippiActionshot from "../assets/NatalieZippiActionshot.webp";
-import HaileyBastianActionshot from "../assets/HaileyBastianActionshot.webp";
-
 export async function getStaticPaths() {
   return coaches.map((coach) => {
     return {
