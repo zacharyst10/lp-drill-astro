@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold">State Countdown</h1>
+    </div>
+    <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+      <div
+        class="days flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
+      >
+        <span class="countdown text-5xl">
+          <span>0</span>
+        </span>
+         days
+      </div>
+      <div
+        class="hours flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
+      >
+        <span class="countdown text-5xl">
+          <span>0</span>
+        </span>
+         hours
+      </div>
+      <div
+        class="minutes flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
+      >
+        <span class="countdown text-5xl">
+          <span>0</span>
+        </span>
+         min
+      </div>
+      <div
+        class="seconds flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
+      >
+        <span class="countdown text-5xl">
+          <span>0</span>
+        </span>
+         sec
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const targetDate = new Date("January 30, 2024 23:59:59");
+        let daysSpan = document.querySelector(".days .countdown span");
+        let hoursSpan = document.querySelector(".hours .countdown span");
+        let minutesSpan = document.querySelector(".minutes .countdown span");
+        let secondsSpan = document.querySelector(".seconds .countdown span");
+
+        function updateCountdown() {
+          let now = new Date();
+          let timeDifference = targetDate - now;
+
+          if (timeDifference <= 0) {
+            clearInterval(interval);
+            return;
+          }
+
+          let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+          let hours = Math.floor(
+            (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          let minutes = Math.floor(
+            (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+          daysSpan.textContent = days;
+          hoursSpan.textContent = hours;
+          minutesSpan.textContent = minutes;
+          secondsSpan.textContent = seconds;
+        }
+
+        let interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+      });
+    </script>
+  </body>
+</html>
