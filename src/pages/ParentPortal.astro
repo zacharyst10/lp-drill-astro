@@ -1,10 +1,12 @@
 ---
-import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Parent Portal">
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div
+    class="flex min-h-full flex-col justify-center px-6 py-20 lg:px-8"
+    id="submitButtonContainer"
+  >
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <h2
         class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
@@ -26,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
             />
           </div>
         </div>
-        <div id="submitButtonContainer">
+        <div>
           <button
             type="submit"
             class="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primaryDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -36,7 +38,7 @@ import Layout from "../layouts/Layout.astro";
       </form>
     </div>
   </div>
-  <div id="protectedContent" class="mt-6 text-center px-10 hidden">
+  <div id="protectedContent" class="mt-32 text-center px-10 hidden">
     <div class="sm:hidden">
       <label for="tabs" class="sr-only">Select a tab</label>
       <select
@@ -210,10 +212,6 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
   <script>
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   setupListeners();
-    // });
-
     document.addEventListener("astro:after-swap", () => {
       console.log("astro:after-swap is triggered");
       setupListeners();
