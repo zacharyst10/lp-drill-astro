@@ -3,6 +3,7 @@ import CalendarTab from "../components/CalendarTab.astro";
 import Layout from "../layouts/Layout.astro";
 import DrillCalendar from "../assets/documents/DrillCalendar.pdf";
 import Nationals from "../assets/documents/Nationals.pdf";
+import Register from "../assets/documents/RegisterMyAthlete.pdf";
 ---
 
 <Layout title="Parent Portal">
@@ -137,7 +138,7 @@ import Nationals from "../assets/documents/Nationals.pdf";
         Summer Schedule for 2024-2025 team content goes here.
       </div>
       <div id="register" class="tab-content hidden">
-        Register My Athlete content goes here.
+        <iframe src={Register} width="100%" height="500px"></iframe>
       </div>
     </div>
   </div>
