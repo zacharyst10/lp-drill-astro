@@ -4,41 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .countdown {
+        display: inline-block;
+        overflow: hidden;
+        line-height: 1em;
+        height: 1.2em; /* Adjust based on your font size */
+      }
+
+      .countdown span {
+        display: inline-block;
+        line-height: 1em;
+        height: 1em;
+      }
+
+      .countdown span.animated {
+        animation: slideDown 0.5s ease forwards;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="mb-8">
+    <div class="mb-5 px-5">
       <h1 class="text-4xl font-bold">State Countdown</h1>
     </div>
-    <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
-      <div
-        class="days flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
-      >
-        <span class="countdown text-5xl">
+    <div class="grid grid-flow-col gap-5 px-5 text-center auto-cols-max">
+      <div class="days flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
+        <span class="countdown text-5xl font-mono">
           <span>0</span>
         </span>
          days
       </div>
-      <div
-        class="hours flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
-      >
-        <span class="countdown text-5xl">
+      <div class="hours flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
+        <span class="countdown text-5xl font-mono">
           <span>0</span>
         </span>
          hours
       </div>
-      <div
-        class="minutes flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
-      >
-        <span class="countdown text-5xl">
-          <span>0</span>
+      <div class="minutes flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
+        <span class="countdown text-5xl font-mono">
+          <span class="number">0</span>
         </span>
          min
       </div>
-      <div
-        class="seconds flex flex-col p-2 bg-neutral rounded-box text-neutral-content"
-      >
-        <span class="countdown text-5xl">
+      <div class="seconds flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
+        <span class="countdown text-5xl font-mono">
           <span>0</span>
         </span>
          sec
@@ -52,6 +73,16 @@
         let hoursSpan = document.querySelector(".hours .countdown span");
         let minutesSpan = document.querySelector(".minutes .countdown span");
         let secondsSpan = document.querySelector(".seconds .countdown span");
+
+        function applyAnimation(element, value) {
+          if (element.textContent !== value.toString()) {
+            element.textContent = value;
+            element.classList.add("animated");
+            setTimeout(() => {
+              element.classList.remove("animated");
+            }, 500);
+          }
+        }
 
         function updateCountdown() {
           let now = new Date();
@@ -71,10 +102,10 @@
           );
           let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-          daysSpan.textContent = days;
-          hoursSpan.textContent = hours;
-          minutesSpan.textContent = minutes;
-          secondsSpan.textContent = seconds;
+          applyAnimation(daysSpan, days);
+          applyAnimation(hoursSpan, hours);
+          applyAnimation(minutesSpan, minutes);
+          applyAnimation(secondsSpan, seconds);
         }
 
         let interval = setInterval(updateCountdown, 1000);
