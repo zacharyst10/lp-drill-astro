@@ -29,6 +29,7 @@ import AubreyAllan from "../assets/AubreyAllanHeadshot.webp";
 import favicon from "../assets/favicon.svg";
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import Coaches from "../components/Coaches.astro";
 
 export const teamMembers = [
   {
@@ -197,6 +198,8 @@ export const teamMembers = [
 ---
 
 <Layout title="Dancers">
+  <Coaches />
+
   <div class="bg-gray-100 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
