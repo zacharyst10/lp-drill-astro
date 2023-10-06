@@ -5,6 +5,7 @@ import DrillCalendar from "../assets/documents/DrillCalendar.pdf";
 import Nationals from "../assets/documents/Nationals.pdf";
 import Register from "../assets/documents/RegisterMyAthlete.pdf";
 import Attachment from "../components/Attachment.astro";
+import Timeline from "../components/Timeline.astro";
 ---
 
 <Layout title="Parent Portal">
@@ -122,7 +123,7 @@ import Attachment from "../components/Attachment.astro";
         </a>
       </nav>
     </div>
-    <div class="pt-3">
+    <div class="p-3 mt-5">
       <div id="calendars" class="tab-content">
         <div class="md:hidden sm:block">
           <Attachment
@@ -136,7 +137,7 @@ import Attachment from "../components/Attachment.astro";
         </div>
       </div>
       <div id="fee" class="tab-content hidden">
-        Fee Due Dates content goes here.
+        <Timeline />
       </div>
       <div id="nationals" class="tab-content hidden">
         <div class="md:hidden sm:block">
@@ -153,7 +154,7 @@ import Attachment from "../components/Attachment.astro";
         Summer Schedule for 2024-2025 team content goes here.
       </div>
       <div id="register" class="tab-content hidden">
-        <div>
+        <div class="md:hidden sm:block">
           <Attachment
             docSize="49kb"
             docTitle="RegisterMyAthlete"
@@ -174,7 +175,7 @@ import Attachment from "../components/Attachment.astro";
     const correctPassword = "1234";
     const form = document.getElementById("passwordForm");
     if (form) {
-      form.removeEventListener("submit", checkPassword); // remove existing listener to avoid duplicates
+      form.removeEventListener("submit", checkPassword);
       form.addEventListener("submit", checkPassword);
     }
     function checkPassword(event: Event) {
