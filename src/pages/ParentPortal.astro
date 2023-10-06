@@ -124,13 +124,21 @@ import Attachment from "../components/Attachment.astro";
     </div>
     <div class="pt-3">
       <div id="calendars" class="tab-content">
+        <div class="">
+          <Attachment
+            docSize="438kb"
+            docTitle="DrillCalendar"
+            docUrl={DrillCalendar}
+          />
+        </div>
+
         <iframe src={DrillCalendar} width="100%" height="500px"></iframe>
       </div>
       <div id="fee" class="tab-content hidden">
         Fee Due Dates content goes here.
       </div>
       <div id="nationals" class="tab-content hidden">
-        <Attachment docSize="4.2mb" docTitle="Nationals" docUrl={Nationals} />
+        <Attachment docSize="991kb" docTitle="Nationals" docUrl={Nationals} />
         <iframe src={Nationals} width="100%" height="500px"></iframe>
       </div>
       <div id="directory" class="tab-content hidden">
@@ -140,6 +148,11 @@ import Attachment from "../components/Attachment.astro";
         Summer Schedule for 2024-2025 team content goes here.
       </div>
       <div id="register" class="tab-content hidden">
+        <Attachment
+          docSize="49kb"
+          docTitle="RegisterMyAthlete"
+          docUrl={Register}
+        />
         <iframe src={Register} width="100%" height="500px"></iframe>
       </div>
     </div>
