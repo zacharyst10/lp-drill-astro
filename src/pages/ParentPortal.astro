@@ -6,6 +6,7 @@ import Nationals from "../assets/documents/Nationals.pdf";
 import Register from "../assets/documents/RegisterMyAthlete.pdf";
 import Attachment from "../components/Attachment.astro";
 import Timeline from "../components/Timeline.astro";
+import Schedule from "../components/Schedule.astro";
 ---
 
 <Layout title="Parent Portal">
@@ -150,8 +151,8 @@ import Timeline from "../components/Timeline.astro";
       <div id="directory" class="tab-content hidden">
         <DirectoryTab />
       </div>
-      <div id="schedule" class="tab-content hidden">
-        Summer Schedule for 2024-2025 team content goes here.
+      <div id="schedule" class="tab-content hidden pb-5">
+        <Schedule />
       </div>
       <div id="register" class="tab-content hidden">
         <div class="md:hidden sm:block">
