@@ -111,6 +111,9 @@
         let interval = setInterval(updateCountdown, 1000);
         updateCountdown();
       });
+      document.addEventListener("astro:after-swap", function () {
+        document.dispatchEvent(new Event("DOMContentLoaded"));
+      });
     </script>
   </body>
 </html>
