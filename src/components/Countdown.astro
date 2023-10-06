@@ -75,7 +75,13 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    const setDarkMode = () => {
+      if (localStorage.darkMode) {
+        document.documentElement.dataset.dark = "";
+      }
+    };
+
+    const initiateCountdown = () => {
       const targetDate = new Date("January 30, 2024 23:59:59");
       let daysSpan = document.querySelector(".days .countdown span");
       let hoursSpan = document.querySelector(".hours .countdown span");
@@ -118,9 +124,14 @@
 
       let interval = setInterval(updateCountdown, 1000);
       updateCountdown();
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      initiateCountdown();
     });
-    // document.addEventListener("astro:after-swap", function () {
-    //   document.dispatchEvent(new Event("DOMContentLoaded"));
-    // });
+
+    document.addEventListener("astro:after-swap", () => {
+      initiateCountdown();
+    });
   </script>
 </body>
