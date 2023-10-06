@@ -6,12 +6,13 @@ import drill3 from "../assets/drill3.jpg";
 import drill from "../assets/drill.jpg";
 import drill5 from "../assets/drill5.jpg";
 import Navbar from "./Navbar.astro";
+import Countdown from "./Countdown.astro";
 ---
 
 <div class="bg-white">
   <main>
     <div class="relative isolate">
-      <svg
+      <!-- <svg
         class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
         aria-hidden="true"
       >
@@ -37,7 +38,7 @@ import Navbar from "./Navbar.astro";
           height="100%"
           stroke-width="0"
           fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"></rect>
-      </svg>
+      </svg> -->
       <div
         class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
         aria-hidden="true"
@@ -50,12 +51,13 @@ import Navbar from "./Navbar.astro";
       </div>
       <div class="overflow-hidden">
         <div
-          class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32"
+          class="mx-auto max-w-7xl px-6 pb-32 pt-24 sm:pt-24 lg:px-8 lg:pt-24"
         >
           <div
             class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"
           >
             <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+              <div class="pb-48"><Countdown /></div>
               <h1
                 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
               >

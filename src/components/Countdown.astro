@@ -1,119 +1,126 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      @keyframes slideDown {
-        from {
-          transform: translateY(-100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
+<body>
+  <style>
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
       }
-
-      .countdown {
-        display: inline-block;
-        overflow: hidden;
-        line-height: 1em;
-        height: 1.2em; /* Adjust based on your font size */
+      to {
+        transform: translateY(0);
+        opacity: 1;
       }
+    }
 
-      .countdown span {
-        display: inline-block;
-        line-height: 1em;
-        height: 1em;
+    @keyframes slideOut {
+      from {
+        transform: translateY(0);
+        opacity: 1;
       }
-
-      .countdown span.animated {
-        animation: slideDown 0.5s ease forwards;
+      to {
+        transform: translateY(100%);
+        opacity: 0;
       }
-    </style>
-  </head>
+    }
 
-  <body>
-    <div class="mb-5 px-5">
-      <h1 class="text-4xl font-bold">State Countdown</h1>
+    .countdown span.animated-out {
+      animation: slideOut 0.5s ease forwards;
+    }
+
+    .countdown {
+      display: inline-block;
+      overflow: hidden;
+      line-height: 1em;
+      height: 1.2em; /* Adjust based on your font size */
+    }
+
+    .countdown span {
+      display: inline-block;
+      line-height: 1em;
+      height: 1em;
+    }
+
+    .countdown span.animated {
+      animation: slideDown 0.5s ease forwards;
+    }
+  </style>
+
+  <div class="mb-5">
+    <h1 class="text-4xl font-bold">State Countdown</h1>
+  </div>
+  <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+    <div class="days flex flex-col p-2 border bg-gray-100 w-28 rounded-2xl">
+      <span class="countdown text-5xl font-mono">
+        <span>0</span>
+      </span>
+       days
     </div>
-    <div class="grid grid-flow-col gap-5 px-5 text-center auto-cols-max">
-      <div class="days flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
-        <span class="countdown text-5xl font-mono">
-          <span>0</span>
-        </span>
-         days
-      </div>
-      <div class="hours flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
-        <span class="countdown text-5xl font-mono">
-          <span>0</span>
-        </span>
-         hours
-      </div>
-      <div class="minutes flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
-        <span class="countdown text-5xl font-mono">
-          <span class="number">0</span>
-        </span>
-         min
-      </div>
-      <div class="seconds flex flex-col p-2 border bg-gray-100 w-28 rounded-xl">
-        <span class="countdown text-5xl font-mono">
-          <span>0</span>
-        </span>
-         sec
-      </div>
+    <div class="hours flex flex-col p-2 border bg-gray-100 w-28 rounded-2xl">
+      <span class="countdown text-5xl font-mono">
+        <span>0</span>
+      </span>
+       hours
     </div>
+    <div class="minutes flex flex-col p-2 border bg-gray-100 w-28 rounded-2xl">
+      <span class="countdown text-5xl font-mono">
+        <span class="number">0</span>
+      </span>
+       min
+    </div>
+    <div class="seconds flex flex-col p-2 border bg-gray-100 w-28 rounded-2xl">
+      <span class="countdown text-5xl font-mono">
+        <span>0</span>
+      </span>
+       sec
+    </div>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const targetDate = new Date("January 30, 2024 23:59:59");
-        let daysSpan = document.querySelector(".days .countdown span");
-        let hoursSpan = document.querySelector(".hours .countdown span");
-        let minutesSpan = document.querySelector(".minutes .countdown span");
-        let secondsSpan = document.querySelector(".seconds .countdown span");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const targetDate = new Date("January 30, 2024 23:59:59");
+      let daysSpan = document.querySelector(".days .countdown span");
+      let hoursSpan = document.querySelector(".hours .countdown span");
+      let minutesSpan = document.querySelector(".minutes .countdown span");
+      let secondsSpan = document.querySelector(".seconds .countdown span");
 
-        function applyAnimation(element, value) {
-          if (element.textContent !== value.toString()) {
-            element.textContent = value;
-            element.classList.add("animated");
-            setTimeout(() => {
-              element.classList.remove("animated");
-            }, 500);
-          }
+      function applyAnimation(element, value) {
+        if (element.textContent !== value.toString()) {
+          element.textContent = value;
+          element.classList.add("animated");
+          setTimeout(() => {
+            element.classList.remove("animated");
+          }, 500);
+        }
+      }
+
+      function updateCountdown() {
+        let now = new Date();
+        let timeDifference = targetDate - now;
+
+        if (timeDifference <= 0) {
+          clearInterval(interval);
+          return;
         }
 
-        function updateCountdown() {
-          let now = new Date();
-          let timeDifference = targetDate - now;
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-          if (timeDifference <= 0) {
-            clearInterval(interval);
-            return;
-          }
+        applyAnimation(daysSpan, days);
+        applyAnimation(hoursSpan, hours);
+        applyAnimation(minutesSpan, minutes);
+        applyAnimation(secondsSpan, seconds);
+      }
 
-          let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-          let hours = Math.floor(
-            (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          let minutes = Math.floor(
-            (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-          );
-          let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-          applyAnimation(daysSpan, days);
-          applyAnimation(hoursSpan, hours);
-          applyAnimation(minutesSpan, minutes);
-          applyAnimation(secondsSpan, seconds);
-        }
-
-        let interval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-      });
-      document.addEventListener("astro:after-swap", function () {
-        document.dispatchEvent(new Event("DOMContentLoaded"));
-      });
-    </script>
-  </body>
-</html>
+      let interval = setInterval(updateCountdown, 1000);
+      updateCountdown();
+    });
+    // document.addEventListener("astro:after-swap", function () {
+    //   document.dispatchEvent(new Event("DOMContentLoaded"));
+    // });
+  </script>
+</body>
