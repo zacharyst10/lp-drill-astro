@@ -8,7 +8,7 @@ interface Props {
 const { docTitle, docSize, docUrl } = Astro.props;
 ---
 
-<div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+<div class="px-4 py-6 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-0">
   <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
     <ul
       role="list"
@@ -31,7 +31,9 @@ const { docTitle, docSize, docUrl } = Astro.props;
           </svg>
           <div class="ml-4 flex min-w-0 flex-1 gap-2">
             <span class="truncate font-medium">{docTitle}</span>
-            <span class="flex-shrink-0 text-gray-400">{docSize}</span>
+            <span class="flex-shrink-0 text-gray-400 hidden sm:block"
+              >{docSize}</span
+            >
           </div>
         </div>
         <div class="ml-4 flex-shrink-0">
