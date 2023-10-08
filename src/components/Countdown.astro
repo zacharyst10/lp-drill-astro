@@ -75,46 +75,42 @@
   </div>
 
   <script>
-    const setDarkMode = () => {
-      if (localStorage.darkMode) {
-        document.documentElement.dataset.dark = "";
-      }
-    };
-
     const initiateCountdown = () => {
       const targetDate = new Date("January 30, 2024 23:59:59");
-      let daysSpan = document.querySelector(".days .countdown span");
-      let hoursSpan = document.querySelector(".hours .countdown span");
-      let minutesSpan = document.querySelector(".minutes .countdown span");
-      let secondsSpan = document.querySelector(".seconds .countdown span");
-
+      const daysSpan = document.querySelector(".days .countdown span");
+      const hoursSpan = document.querySelector(".hours .countdown span");
+      const minutesSpan = document.querySelector(".minutes .countdown span");
+      const secondsSpan = document.querySelector(".seconds .countdown span");
       function applyAnimation(element, value) {
-        if (element.textContent !== value.toString()) {
-          element.textContent = value;
-          element.classList.add("animated");
-          setTimeout(() => {
-            element.classList.remove("animated");
-          }, 500);
+        if (element) {
+          // Check if the element exists
+          if (element.textContent !== value.toString()) {
+            element.textContent = value;
+            element.classList.add("animated");
+            setTimeout(() => {
+              element.classList.remove("animated");
+            }, 500);
+          }
         }
       }
 
       function updateCountdown() {
-        let now = new Date();
-        let timeDifference = targetDate - now;
+        const now = new Date();
+        const timeDifference = targetDate - now;
 
         if (timeDifference <= 0) {
           clearInterval(interval);
           return;
         }
 
-        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        let hours = Math.floor(
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
           (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
-        let minutes = Math.floor(
+        const minutes = Math.floor(
           (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
         );
-        let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
         applyAnimation(daysSpan, days);
         applyAnimation(hoursSpan, hours);
@@ -122,7 +118,7 @@
         applyAnimation(secondsSpan, seconds);
       }
 
-      let interval = setInterval(updateCountdown, 1000);
+      const interval = setInterval(updateCountdown, 1000);
       updateCountdown();
     };
 
