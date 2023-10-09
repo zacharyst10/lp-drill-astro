@@ -26,10 +26,12 @@ const { coachData } = Astro.props;
           <div
             class="relative aspect-[2/1] h-full md:-mx-8 xl:mx-0 xl:aspect-auto"
           >
-            <img
+            <Image
               class="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl"
-              src={coachData.imageSrcAction.src}
+              src={coachData.imageSrcAction}
               alt={coachData.title}
+              quality={1}
+              loading={"eager"}
             />
           </div>
         </div>
