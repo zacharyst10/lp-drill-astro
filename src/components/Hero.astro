@@ -6,11 +6,12 @@ import LPWeb from "../assets/LP-web.jpg";
 ---
 
 <div class="relative isolate overflow-hidden pt-14">
-  <img
-    src={LPComp.src}
+  <Image
+    src={LPComp}
     alt="lp drill team"
     class="absolute inset-0 -z-10 h-full w-full object-cover"
-    loading="lazy"
+    loading="eager"
+    quality={"low"}
   />
   <div
     class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
