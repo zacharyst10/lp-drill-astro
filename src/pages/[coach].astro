@@ -26,11 +26,9 @@ const { coachData } = Astro.props;
           <div
             class="relative aspect-[2/1] h-full md:-mx-8 xl:mx-0 xl:aspect-auto"
           >
-            <Image
-              transition:name="img"
+            <img
               class="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl"
-              src={coachData.imageSrcAction}
-              quality={1}
+              src={coachData.imageSrcAction.src}
               alt={coachData.title}
             />
           </div>
@@ -39,17 +37,16 @@ const { coachData } = Astro.props;
           class="w-full max-w-2xl xl:max-w-none xl:flex-auto xl:px-16 xl:py-24"
         >
           <figcaption class="mt-8 text-base">
-            <div class="font-semibold text-white" transition:name="title">
+            <div class="font-semibold text-white">
               {coachData.title}
             </div>
-            <div class="mt-1 text-gray-400" transition:name="role">
+            <div class="mt-1 text-gray-400">
               {coachData.role}
             </div>
           </figcaption>
           <figure class="relative isolate pt-6 sm:pt-12">
             <blockquote
               class="text-xl font-semibold leading-8 text-white sm:text-md sm:leading-9"
-              transition:name="body"
             >
               {coachData.body}
             </blockquote>
