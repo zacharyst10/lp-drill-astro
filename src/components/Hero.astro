@@ -1,15 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import LPDrill from "../assets/lp-drill-23.jpg";
+import LPComp from "../assets/lp-comp.jpg";
+import LPWeb from "../assets/LP-web.jpg";
 ---
 
 <div class="relative isolate overflow-hidden pt-14">
-  <Image
-    src={LPDrill}
+  <img
+    src={LPWeb.src}
     alt="lp drill team"
     class="absolute inset-0 -z-10 h-full w-full object-cover"
     loading="eager"
-    quality={"mid"}
   />
   <div
     class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
