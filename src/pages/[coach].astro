@@ -16,7 +16,7 @@ const { coach } = Astro.params;
 const { coachData } = Astro.props;
 ---
 
-<Layout title={coach?.toUpperCase() || "Coaches Page"}>
+<Layout title={coach || "Coaches Page"}>
   <div class="bg-white pb-16 pt-48 sm:pb-24 sm:pt-48 xl:pb-32">
     <div class="bg-gray-900 pb-20 sm:pb-24 xl:pb-0">
       <div
