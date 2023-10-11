@@ -7,7 +7,9 @@ import TessaSmith from "../assets/TessaSmithHeadshot.webp";
 import EllieHarrison from "../assets/EllieHarrisonHeadshot.webp";
 import EllieHarrison1 from "../assets/ellie-harrison-headshot.webp";
 import HayleeLopez from "../assets/HayleeLopezHeadshot.webp";
+import HayleeLopez1 from "../assets/haylee-lopez-headshot.webp";
 import BroklynSmith from "../assets/BrooklynSmithHeadshot.webp";
+import BroklynSmith1 from "../assets/brooklyn-smith-headshot.webp";
 import AidenGreen from "../assets/AidenGreenHeadshot.webp";
 import BrittanyCormier from "../assets/BrittanyCormierHeadshot.webp";
 import CamilleMcCracken from "../assets/CamilleMcCrackenHeadshot.webp";
@@ -28,7 +30,9 @@ import SophieWard from "../assets/SophieWardHeadshot.webp";
 import AveryJones from "../assets/AveryJonesHeadshot.webp";
 import BellaLeBaron from "../assets/bella-lebaron-headshot.webp";
 import KiahSchofield from "../assets/KiahSchofieldHeadshot.webp";
+import KiahSchofield1 from "../assets/kiah-schofield-headshot.webp";
 import AubreyAllan from "../assets/AubreyAllanHeadshot.webp";
+import AubreyAllan1 from "../assets/aubrey-allan-headshot.webp";
 import favicon from "../assets/favicon.svg";
 import Layout from "../layouts/Layout.astro";
 
@@ -58,25 +62,25 @@ export const teamMembers = [
     grade: "Senior",
   },
   {
-    image: KiahSchofield,
+    image: KiahSchofield1,
     name: "Kiah Schofield",
     role: "Publicist",
     grade: "Senior",
   },
   {
-    image: HayleeLopez,
+    image: HayleeLopez1,
     name: "Haylee Lopez",
     role: "Publicist",
     grade: "Junior",
   },
   {
-    image: AubreyAllan,
+    image: AubreyAllan1,
     name: "Aubrey Allan",
     role: "Costume Chair",
     grade: "Junior",
   },
   {
-    image: BroklynSmith,
+    image: BroklynSmith1,
     name: "Brooklyn Smith",
     role: "Social Chair",
     grade: "Junior",
@@ -217,7 +221,7 @@ export const teamMembers = [
         class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
       >
         {
-          teamMembers.slice(0, 8).map((member) => (
+          teamMembers.map((member) => (
             <li>
               <div class="group aspect-[7/10] block w-full overflow-hidden rounded-xl bg-gray-200 focus-within:ring-2 focus-within:ring-green8 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
                 <Image
