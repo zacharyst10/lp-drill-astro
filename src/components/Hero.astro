@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
+import team from "../assets/team-portrait.webp";
 
 import drill from "../assets/16-9-drill.jpg";
 ---
 
 <div class="relative isolate overflow-hidden pt-14">
   <Image
-    src={drill}
+    src={team}
     alt="lp drill team"
     class="absolute inset-0 -z-10 h-full w-full object-cover"
     loading="eager"
-    quality={"low"}
   />
   <div
     class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
