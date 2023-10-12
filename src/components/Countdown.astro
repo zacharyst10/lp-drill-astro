@@ -122,6 +122,9 @@
       updateCountdown();
     };
 
+    document.addEventListener("astro:after-swap", function () {
+      initiateCountdown();
+    });
     document.addEventListener("DOMContentLoaded", function () {
       initiateCountdown();
     });

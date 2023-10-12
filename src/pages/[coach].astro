@@ -37,16 +37,17 @@ const { coachData } = Astro.props;
           class="w-full max-w-2xl xl:max-w-none xl:flex-auto xl:px-16 xl:py-24"
         >
           <figcaption class="mt-8 text-base">
-            <div class="font-semibold text-white">
+            <div class="font-semibold text-white" transition:name="title">
               {coachData.title}
             </div>
-            <div class="mt-1 text-gray-400">
+            <div class="mt-1 text-gray-400" transition:name="role">
               {coachData.role}
             </div>
           </figcaption>
           <figure class="relative isolate pt-6 sm:pt-12">
             <blockquote
               class="text-xl font-semibold leading-8 text-white sm:text-md sm:leading-9"
+              transition:name="body"
             >
               {coachData.body}
             </blockquote>
