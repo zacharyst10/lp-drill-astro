@@ -9,10 +9,11 @@ import Timeline from "../components/Timeline.astro";
 import Schedule from "../components/Schedule.astro";
 ---
 
-<Layout title="Parent Portal">
+<Layout title="Parent Portal" transition:animate="none">
   <div
     class="flex min-h-full flex-col justify-center px-6 py-24 lg:px-8"
     id="submitButtonContainer"
+    transition:animate="none"
   >
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <h2
@@ -179,19 +180,45 @@ import Schedule from "../components/Schedule.astro";
   </div>
 </Layout>
 <script>
-  const correctPassword = "1234";
-  const form = document.getElementById("passwordForm");
-  if (form) {
-    form.removeEventListener("submit", checkPassword);
-    form.addEventListener("submit", checkPassword);
+  function bindEvents() {
+    const form = document.getElementById("passwordForm");
+    if (form) {
+      form.removeEventListener("submit", checkPassword);
+      form.addEventListener("submit", checkPassword);
+    }
+
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+    tabs.forEach((tab, index) => {
+      tab.removeEventListener("click", tabClick);
+      tab.addEventListener("click", tabClick);
+
+      function tabClick() {
+        tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
+        tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
+        tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
+        contents.forEach((c) => c.classList.add("hidden"));
+        tab.classList.add("text-gray-900", "bg-white");
+        tab.children[1].classList.remove("bg-transparent");
+        tab.children[1].classList.add("bg-primary");
+        contents[index].classList.remove("hidden");
+      }
+    });
+
+    const selectElement = document.getElementById("tabs");
+    if (selectElement) {
+      selectElement.removeEventListener("change", selectChange);
+      selectElement.addEventListener("change", selectChange);
+    }
   }
+
   function checkPassword(event: Event) {
     event.preventDefault();
     console.log("checkPassword is triggered");
 
     const inputElement = document.getElementById("passwordInput");
     const inputPassword = (inputElement as HTMLInputElement).value;
-    if (inputPassword === correctPassword) {
+    if (inputPassword === "1234") {
       const passwordPrompt = document.getElementById("passwordPrompt");
       const protectedContent = document.getElementById("protectedContent");
       const submitButtonContainer = document.getElementById(
@@ -206,40 +233,26 @@ import Schedule from "../components/Schedule.astro";
       alert("Incorrect password. Please try again.");
     }
   }
-  const tabs = document.querySelectorAll(".tab");
-  const contents = document.querySelectorAll(".tab-content");
-  tabs.forEach((tab, index) => {
-    tab.removeEventListener("click", tabClick);
-    tab.addEventListener("click", tabClick);
 
-    function tabClick() {
-      tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
-      tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
-      tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
-      contents.forEach((c) => c.classList.add("hidden"));
-      tab.classList.add("text-gray-900", "bg-white");
-      tab.children[1].classList.remove("bg-transparent");
-      tab.children[1].classList.add("bg-primary");
-      contents[index].classList.remove("hidden");
-    }
-  });
+  function selectChange(event: Event) {
+    const selectedValue = (event?.target as HTMLSelectElement)?.value;
+    const contents = document.querySelectorAll(".tab-content");
 
-  const selectElement = document.getElementById("tabs");
-  if (selectElement) {
-    selectElement.removeEventListener("change", selectChange);
-    selectElement.addEventListener("change", selectChange);
-
-    function selectChange(event: Event) {
-      const selectedValue = (event?.target as HTMLSelectElement)?.value;
-      contents.forEach((content) => {
-        if (content.id === selectedValue) {
-          content.classList.remove("hidden");
-        } else {
-          content.classList.add("hidden");
-        }
-      });
-    }
+    contents.forEach((content) => {
+      if (content.id === selectedValue) {
+        content.classList.remove("hidden");
+      } else {
+        content.classList.add("hidden");
+      }
+    });
   }
 
-  document.addEventListener("astro:after-swap", () => {});
+  document.addEventListener("DOMContentLoaded", bindEvents);
+
+  document.addEventListener("astro:page-load", bindEvents);
+
+  // If you need any specific DOM state restoration, use the astro:after-swap event
+  document.addEventListener("astro:after-swap", function () {
+    // For example: restore UI state like theme, active tabs, etc.
+  });
 </script>
