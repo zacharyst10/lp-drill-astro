@@ -168,7 +168,7 @@ const families = [
                   data-image={family.image}
                 >
                   <Image
-                    class="mx-auto h-48 w-48 flex-shrink-0 rounded-lg"
+                    class="mx-auto flex-shrink-0 rounded-lg h-96 object-cover"
                     src={family.image}
                     alt={family.family}
                   />
@@ -255,7 +255,9 @@ const families = [
         button.addEventListener("click", () => {
           const index = button.getAttribute("data-index");
           const modal = document.getElementById(`myModal-${index}`);
-          modal.style.display = "block";
+          if (modal) {
+            modal.style.display = "block";
+          }
         });
       });
 
@@ -265,7 +267,9 @@ const families = [
       closeModalButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const parentModal = button.closest("[id^=myModal]");
-          parentModal.style.display = "none";
+          if (parentModal) {
+            (parentModal as HTMLElement).style.display = "none";
+          }
         });
       });
 
@@ -274,7 +278,9 @@ const families = [
           "[id^=myModal][style='display: block;']"
         );
         if (event.target === openedModal) {
-          openedModal.style.display = "none";
+          if (openedModal) {
+            (openedModal as HTMLElement).style.display = "none";
+          }
         }
       });
     </script>
