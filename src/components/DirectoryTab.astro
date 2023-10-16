@@ -269,7 +269,11 @@ const families = [
                             class="text-base font-semibold leading-6 text-gray-900"
                             id="modal-title"
                           />
-                          {family.family}
+                          <span class="text-2xl">{family.family}</span>
+                          <br />
+                          <span>{family.dad}</span>
+                          <br />
+                          <span>{family.mom}</span>
                           <div class="mt-2">
                             <Image
                               class="mx-auto rounded-2xl flex-shrink-0 w-auto max-h-[500px] object-fit"
@@ -277,9 +281,6 @@ const families = [
                               alt={family.family}
                             />
                           </div>
-                          {family.dad}
-                          <br />
-                          {family.mom}
                         </div>
                       </div>
                     </div>
@@ -316,6 +317,8 @@ const families = [
           }
         });
       });
+
+      //close modal when clicking outside of modal
 
       window.addEventListener("click", (event) => {
         const openedModal = document.querySelector(
