@@ -1,94 +1,379 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+import showcase from "../assets/showcase-photo.jpg";
+import miniChev from "../assets/mini-chev.jpg";
+import endOfYear from "../assets/end-of-year-showcase.jpg";
+import compPic from "../assets/comp-pic.jpg";
+import statePic from "../assets/state-pic.jpg";
 ---
 
 <Layout title="Events Page">
   <div class="bg-white py-48">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:text-center">
-        <p
+      <div class="mx-auto max-w-2xl text-center">
+        <h2
           class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl"
         >
           Upcoming Events
-        </p>
+        </h2>
         <p class="mt-6 text-lg leading-8 text-gray-600">
           Join us for the exciting events we have lined up. We have a variety of
           competitions, showcases, and clinics, and we can't wait to see you
           there!
         </p>
       </div>
-
-      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-        <dl
-          class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
-        >
-          <div class="relative pl-16">
-            <dt class="text-base font-semibold leading-7 text-gray-900">
-              <div
-                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
-              >
-                <svg
-                  class="h-6 w-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                </svg>
-              </div>
-               Competition Showcase
-            </dt>
-            <dd class="mt-2 text-base leading-7 text-gray-600">
-              November 8th at 7:30pm in the Field House. Chevaliers will
-              showcase their competition routines in costume. Guest judges will
-              provide live feedback to prepare for competition season!
-            </dd>
+      <div
+        class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+      >
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={showcase}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
           </div>
-
-          <div class="relative pl-16">
-            <dt class="text-base font-semibold leading-7 text-gray-900">
-              <div
-                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Nov 8th, 2023</time
               >
-                <svg
-                  class="h-6 w-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                </svg>
-              </div>
-               Mini Chevalier Clinic:
-            </dt>
-            <dd class="mt-2 text-base leading-7 text-gray-600">Info TBD</dd>
-          </div>
-
-          <div class="relative pl-16">
-            <dt class="text-base font-semibold leading-7 text-gray-900">
-              <div
-                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
               >
-                <svg
-                  class="h-6 w-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                </svg>
-              </div>
-               Auditions
-            </dt>
-            <dd class="mt-2 text-base leading-7 text-gray-600">
-              We hold auditions for various roles and events. Stay tuned for
-              more information on upcoming auditions!
-            </dd>
+                7:30pm
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   Competition Showcase
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Lone Peak Field House. Chevaliers will showcase their
+                competition routines in costume. Guest judges will provide live
+                feedback to prepare for competition season!
+              </p>
+            </div>
           </div>
-        </dl>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={miniChev}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500">TBD</time>
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   Mini Drill Clinic
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600"></p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={compPic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Dec 2nd, 2023</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   Herriman Invitational Competition
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Herriman High School. Chevaliers will compete against other
+                teams in the region.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={compPic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Dec 16th, 2023</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   UVU Invitational Competition
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Utah Valley University. Chevaliers will compete against other
+                teams in the region.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={statePic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Jan 17th, 2024</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   REGION
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                American Fork High School. Chevaliers will compete against other
+                teams in the region.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={statePic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Jan 30th, 2024</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   STATE QUARTER FINALS
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Utah Valley University. Chevaliers will compete against other
+                teams in the region.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={statePic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Feb 1st, 2024</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   STATE SEMI FINALS
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Utah Valley University. Chevaliers will compete against other
+                teams in the region.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={statePic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Feb 1st, 2024</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   STATE FINALS
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Utah Valley University. Chevaliers will compete against other
+                teams in the region.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
+              src={endOfYear}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Mar 13th, 2024</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                7pm
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   End of Year Showcase
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Lone Peak High School. Chevaliers will showcase their routines
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- More posts... -->
       </div>
     </div>
   </div>
