@@ -45,7 +45,7 @@
   </style>
 
   <div class="mb-5">
-    <h1 class="text-4xl font-bold">State Countdown</h1>
+    <h1 class="text-4xl font-bold">Countdown to State Competition</h1>
   </div>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
     <div class="days flex flex-col p-2 border bg-gray-100 w-28 rounded-2xl">
@@ -81,11 +81,11 @@
       const hoursSpan = document.querySelector(".hours .countdown span");
       const minutesSpan = document.querySelector(".minutes .countdown span");
       const secondsSpan = document.querySelector(".seconds .countdown span");
-      function applyAnimation(element, value) {
+      function applyAnimation(element: Element | null, value: number | string) {
         if (element) {
           // Check if the element exists
           if (element.textContent !== value.toString()) {
-            element.textContent = value;
+            element.textContent = value.toString();
             element.classList.add("animated");
             setTimeout(() => {
               element.classList.remove("animated");
@@ -96,7 +96,8 @@
 
       function updateCountdown() {
         const now = new Date();
-        const timeDifference = targetDate - now;
+        const targetDate = new Date("January 30, 2024 23:59:59");
+        const timeDifference = targetDate.getTime() - now.getTime();
 
         if (timeDifference <= 0) {
           clearInterval(interval);
