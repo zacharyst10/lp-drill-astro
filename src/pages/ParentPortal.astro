@@ -8,6 +8,7 @@ import Register from "../assets/documents/RegisterMyAthlete.pdf";
 import Attachment from "../components/Attachment.astro";
 import Timeline from "../components/Timeline.astro";
 import Schedule from "../components/Schedule.astro";
+import CompInfo from "../components/CompInfo.astro";
 ---
 
 <Layout title="Parent Portal" transition:animate="none">
@@ -63,6 +64,7 @@ import Schedule from "../components/Schedule.astro";
           >Summer Schedule for 2024-2025 team</option
         >
         <option id="register" value="register">Register My Athlete</option>
+        <option id="comp-info" value="comp-info">Competition Info</option>
       </select>
     </div>
     <div class="hidden sm:block">
@@ -124,6 +126,15 @@ import Schedule from "../components/Schedule.astro";
             aria-hidden="true"
             class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
         </a>
+        <a
+          href="#"
+          class="tab text-gray-500 bg-white rounded-r-lg group relative min-w-0 flex-1 overflow-hidden py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+        >
+          <span>Competition Info</span>
+          <span
+            aria-hidden="true"
+            class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+        </a>
       </nav>
     </div>
     <div class="p-3 mt-5">
@@ -177,6 +188,9 @@ import Schedule from "../components/Schedule.astro";
         <div class="md:block hidden">
           <iframe src={Register} class="w-full h-screen"></iframe>
         </div>
+      </div>
+      <div id="comp-info" class="tab-content hidden pb-5 text-left">
+        <CompInfo />
       </div>
     </div>
   </div>
