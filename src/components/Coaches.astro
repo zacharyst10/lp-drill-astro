@@ -57,11 +57,12 @@ export const coaches = [
         <ul
           role="list"
           class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
-          transition:name="img"
+        
         >
           {
             coaches.map((coach) => (
               <Card
+                transition:name="img"
                 title={coach.title}
                 role={coach.role}
                 imageSrc={coach.imageSrcHead}

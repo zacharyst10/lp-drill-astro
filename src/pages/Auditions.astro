@@ -8,9 +8,37 @@ import MarinaActionshot from "../assets/actionshots/marina-allen-actionshot.webp
 import BrynleeActionshot from "../assets/actionshots/brynlee-harrison-actionshot.webp";
 import TessaActionshot from "../assets/actionshots/tessa-smith-actionshot.webp";
 import Schedule from "../components/Schedule.astro";
+import PhotoCarousel from "../components/PhotoCarousel.astro";
+
+const dancers = [
+  {
+    ImageSrc: EllieActionshot,
+    ImageAlt: "Ellie Harrison Action Shot",
+  },
+  {
+    ImageSrc: HayleeActionshot,
+    ImageAlt: "Haylee Lopez Action Shot",
+  },
+  {
+    ImageSrc: MarinaActionshot,
+    ImageAlt: "Marina Allen Action Shot",
+  },
+  {
+    ImageSrc: BrynleeActionshot,
+    ImageAlt: "Brynlee Harrison Action Shot",
+  },
+  {
+    ImageSrc: TessaActionshot,
+    ImageAlt: "Tessa Smith Action Shot",
+  },
+];
 ---
 
 <Layout title="Auditions">
+  <div
+    class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0"
+  >
+  </div>
   <div class="bg-white pt-10">
     <div class="py-24 xl:mx-auto xl:max-w-7xl xl:px-8">
       <div class="mt-4 flow-root">
@@ -21,91 +49,14 @@ import Schedule from "../components/Schedule.astro";
             <div
               class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0"
             >
-              <a
-                href="#"
-                class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 xl:w-auto"
-              >
-                <span aria-hidden="true" class="absolute inset-0">
-                  <Image
-                    quality={1}
-                    src={EllieActionshot}
-                    alt="Ellie Harrison Action Shot"
-                    class="h-full w-full object-cover object-center"
+              {
+                dancers.map((dancer) => (
+                  <PhotoCarousel
+                    ImageSrc={dancer.ImageSrc}
+                    ImageAlt={dancer.ImageAlt}
                   />
-                </span>
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
-                ></span>
-              </a>
-              <a
-                href="#"
-                class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 xl:w-auto"
-              >
-                <span aria-hidden="true" class="absolute inset-0">
-                  <Image
-                    quality={1}
-                    src={HayleeActionshot}
-                    alt=""
-                    class="h-full w-full object-cover object-center"
-                  />
-                </span>
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
-                ></span>
-              </a>
-              <a
-                href="#"
-                class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 xl:w-auto"
-              >
-                <span aria-hidden="true" class="absolute inset-0">
-                  <Image
-                    quality={1}
-                    src={MarinaActionshot}
-                    alt=""
-                    class="h-full w-full object-cover object-center"
-                  />
-                </span>
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
-                ></span>
-              </a>
-              <a
-                href="#"
-                class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 xl:w-auto"
-              >
-                <span aria-hidden="true" class="absolute inset-0">
-                  <Image
-                    quality={1}
-                    src={BrynleeActionshot}
-                    alt=""
-                    class="h-full w-full object-cover object-center"
-                  />
-                </span>
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
-                ></span>
-              </a>
-              <a
-                href="#"
-                class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 xl:w-auto"
-              >
-                <span aria-hidden="true" class="absolute inset-0">
-                  <Image
-                    quality={1}
-                    src={TessaActionshot}
-                    alt=""
-                    class="h-full w-full object-cover object-center"
-                  />
-                </span>
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
-                ></span>
-              </a>
+                ))
+              }
             </div>
           </div>
         </div>
