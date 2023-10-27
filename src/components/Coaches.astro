@@ -59,34 +59,17 @@ export const coaches = [
           class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
           transition:name="img"
         >
-          <Card
-            title={coaches[0].title}
-            role={coaches[0].role}
-            imageSrc={SarahHeadshot}
-            body={coaches[0].body}
-            href="/sarah"
-          />
-          <Card
-            title={coaches[1].title}
-            role={coaches[1].role}
-            imageSrc={JerraHeadshot}
-            body={coaches[1].body}
-            href="/jerra"
-          />
-          <Card
-            title={coaches[2].title}
-            role={coaches[2].role}
-            imageSrc={NatalieHeadshot}
-            body={coaches[2].body}
-            href="/natalie"
-          />
-          <Card
-            title={coaches[3].title}
-            role={coaches[3].role}
-            imageSrc={HaileyHeadshot}
-            body={coaches[3].body}
-            href="/hailey"
-          />
+          {
+            coaches.map((coach) => (
+              <Card
+                title={coach.title}
+                role={coach.role}
+                imageSrc={coach.imageSrcHead}
+                body={coach.body}
+                href={coach.href}
+              />
+            ))
+          }
         </ul>
       </div>
     </div>
