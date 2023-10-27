@@ -1,8 +1,81 @@
 ---
+import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import comp1 from "../assets/gallery/competition/comp-1.jpg";
+import comp2 from "../assets/gallery/competition/comp-2.jpg";
+import comp3 from "../assets/gallery/competition/comp-3.jpg";
+import comp4 from "../assets/gallery/competition/comp-4.jpg";
+import PhotoCarouselImage from "../components/PhotoCarousel/PhotoCarouselImage.astro";
+
+const comp = [
+  {
+    ImageSrc: comp1,
+    ImageAlt: "comp1",
+  },
+  {
+    ImageSrc: comp2,
+    ImageAlt: "comp2",
+  },
+  {
+    ImageSrc: comp3,
+    ImageAlt: "comp3",
+  },
+  {
+    ImageSrc: comp4,
+    ImageAlt: "comp4",
+  },
+];
 ---
 
 <Layout title="Gallery">
-  <h1 class="mt-32">Gallery</h1>
-  <p>Coming soon...</p>
+  <div class="mx-auto max-w-7xl mt-48">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        SUMMER
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>poop</PhotoCarouselContainer>
+  <div class="mx-auto max-w-7xl mt-48">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        FOOTBALL SEASON
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>poop</PhotoCarouselContainer>
+  <div class="mx-auto max-w-7xl mt-48">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        SIR KNIGHT
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>poop</PhotoCarouselContainer>
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        COMPETITION
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>
+    {
+      comp.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
+  <div class="mx-auto max-w-7xl mt-48">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        SIR KNIGHT
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>poop</PhotoCarouselContainer>
 </Layout>

@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import EllieActionshot from "../assets/actionshots/ellie-harrison-actionshot.webp";
 import HayleeActionshot from "../assets/actionshots/haylee-lopez-actionshot.webp";
 
@@ -36,14 +35,18 @@ const dancers = [
 ---
 
 <Layout title="Auditions">
-  <PhotoCarouselContainer>
-    {
-      dancers.map((dancer) => (
-        <PhotoCarousel ImageSrc={dancer.ImageSrc} ImageAlt={dancer.ImageAlt} />
-      ))
-    }
-  </PhotoCarouselContainer>
-
+  <div class="pt-24">
+    <PhotoCarouselContainer>
+      {
+        dancers.map((dancer) => (
+          <PhotoCarousel
+            ImageSrc={dancer.ImageSrc}
+            ImageAlt={dancer.ImageAlt}
+          />
+        ))
+      }
+    </PhotoCarouselContainer>
+  </div>
   <div class="mx-auto max-w-7xl px-6 sm:mt-5 lg:px-8 pb-10">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
