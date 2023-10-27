@@ -8,7 +8,8 @@ import MarinaActionshot from "../assets/actionshots/marina-allen-actionshot.webp
 import BrynleeActionshot from "../assets/actionshots/brynlee-harrison-actionshot.webp";
 import TessaActionshot from "../assets/actionshots/tessa-smith-actionshot.webp";
 import Schedule from "../components/Schedule.astro";
-import PhotoCarousel from "../components/PhotoCarousel.astro";
+import PhotoCarousel from "../components/PhotoCarousel/PhotoCarouselImage.astro";
+import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 
 const dancers = [
   {
@@ -35,34 +36,13 @@ const dancers = [
 ---
 
 <Layout title="Auditions">
-  <div
-    class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0"
-  >
-  </div>
-  <div class="bg-white pt-10">
-    <div class="py-24 xl:mx-auto xl:max-w-7xl xl:px-8">
-      <div class="mt-4 flow-root">
-        <div class="-my-2">
-          <div
-            class="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible"
-          >
-            <div
-              class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0"
-            >
-              {
-                dancers.map((dancer) => (
-                  <PhotoCarousel
-                    ImageSrc={dancer.ImageSrc}
-                    ImageAlt={dancer.ImageAlt}
-                  />
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PhotoCarouselContainer>
+    {
+      dancers.map((dancer) => (
+        <PhotoCarousel ImageSrc={dancer.ImageSrc} ImageAlt={dancer.ImageAlt} />
+      ))
+    }
+  </PhotoCarouselContainer>
 
   <div class="mx-auto max-w-7xl px-6 sm:mt-5 lg:px-8 pb-10">
     <div class="mx-auto max-w-2xl lg:mx-0">
