@@ -1,11 +1,15 @@
 ---
 import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import comp1 from "../assets/gallery/competition/comp-1.jpg";
 import comp2 from "../assets/gallery/competition/comp-2.jpg";
 import comp3 from "../assets/gallery/competition/comp-3.jpg";
 import comp4 from "../assets/gallery/competition/comp-4.jpg";
+import sir2 from "../assets/gallery/sir-knight/sir-knight-2.jpg";
+import sir1 from "../assets/gallery/sir-knight/sir-knight-1.jpg";
+import sir3 from "../assets/gallery/sir-knight/sir-knight-3.jpg";
+import sir4 from "../assets/gallery/sir-knight/sir-knight-4.jpg";
+import sir5 from "../assets/gallery/sir-knight/sir-knight-5.jpg";
 import PhotoCarouselImage from "../components/PhotoCarousel/PhotoCarouselImage.astro";
 
 const comp = [
@@ -24,6 +28,29 @@ const comp = [
   {
     ImageSrc: comp4,
     ImageAlt: "comp4",
+  },
+];
+
+const sir = [
+  {
+    ImageSrc: sir1,
+    ImageAlt: "sir1",
+  },
+  {
+    ImageSrc: sir2,
+    ImageAlt: "sir2",
+  },
+  {
+    ImageSrc: sir3,
+    ImageAlt: "sir3",
+  },
+  {
+    ImageSrc: sir4,
+    ImageAlt: "sir4",
+  },
+  {
+    ImageSrc: sir5,
+    ImageAlt: "sir5",
   },
 ];
 ---
@@ -52,7 +79,16 @@ const comp = [
       </h2>
     </div>
   </div>
-  <PhotoCarouselContainer>coming soon</PhotoCarouselContainer>
+  <PhotoCarouselContainer>
+    {
+      sir.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
   <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
