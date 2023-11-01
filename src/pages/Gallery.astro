@@ -10,6 +10,13 @@ import sir1 from "../assets/gallery/sir-knight/sir-knight-1.jpg";
 import sir3 from "../assets/gallery/sir-knight/sir-knight-3.jpg";
 import sir4 from "../assets/gallery/sir-knight/sir-knight-4.jpg";
 import sir5 from "../assets/gallery/sir-knight/sir-knight-5.jpg";
+import football1 from "../assets/gallery/football/football-1.jpg";
+import football2 from "../assets/gallery/football/football-2.jpg";
+import football3 from "../assets/gallery/football/football-3.jpg";
+import football4 from "../assets/gallery/football/football-4.jpg";
+import football5 from "../assets/gallery/football/football-5.jpg";
+import football6 from "../assets/gallery/football/football-6.jpg";
+import football7 from "../assets/gallery/football/football-7.jpg";
 import PhotoCarouselImage from "../components/PhotoCarousel/PhotoCarouselImage.astro";
 
 const comp = [
@@ -53,10 +60,41 @@ const sir = [
     ImageAlt: "sir5",
   },
 ];
+
+const football = [
+  {
+    ImageSrc: football1,
+    ImageAlt: "football1",
+  },
+  {
+    ImageSrc: football2,
+    ImageAlt: "football2",
+  },
+  {
+    ImageSrc: football3,
+    ImageAlt: "football3",
+  },
+  {
+    ImageSrc: football4,
+    ImageAlt: "football4",
+  },
+  {
+    ImageSrc: football5,
+    ImageAlt: "football5",
+  },
+  {
+    ImageSrc: football6,
+    ImageAlt: "football6",
+  },
+  {
+    ImageSrc: football7,
+    ImageAlt: "football7",
+  },
+];
 ---
 
 <Layout title="Gallery">
-  <div class="mx-auto max-w-7xl mt-48">
+  <div class="mx-auto max-w-7xl mt-48 mb-5">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         SUMMER
@@ -71,7 +109,16 @@ const sir = [
       </h2>
     </div>
   </div>
-  <PhotoCarouselContainer>coming soon</PhotoCarouselContainer>
+  <PhotoCarouselContainer>
+    {
+      football.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
   <div class="mx-auto max-w-7xl mt-48">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
