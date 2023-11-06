@@ -17,6 +17,16 @@ import football4 from "../assets/gallery/football/football-4.jpg";
 import football5 from "../assets/gallery/football/football-5.jpg";
 import football6 from "../assets/gallery/football/football-6.jpg";
 import football7 from "../assets/gallery/football/football-7.jpg";
+import national1 from "../assets/gallery/nationals/nationals-1.jpg";
+import national2 from "../assets/gallery/nationals/nationals-2.jpg";
+import national3 from "../assets/gallery/nationals/nationals-3.jpg";
+import national4 from "../assets/gallery/nationals/nationals-4.jpg";
+import national5 from "../assets/gallery/nationals/nationals-5.jpg";
+import national6 from "../assets/gallery/nationals/nationals-6.jpg";
+import national7 from "../assets/gallery/nationals/nationals-7.jpg";
+import national8 from "../assets/gallery/nationals/nationals-8.jpg";
+import national9 from "../assets/gallery/nationals/nationals-9.jpg";
+import national10 from "../assets/gallery/nationals/nationals-10.jpg";
 import PhotoCarouselImage from "../components/PhotoCarousel/PhotoCarouselImage.astro";
 
 const comp = [
@@ -91,10 +101,53 @@ const football = [
     ImageAlt: "football7",
   },
 ];
+
+const nationals = [
+  {
+    ImageSrc: national1,
+    ImageAlt: "national1",
+  },
+  {
+    ImageSrc: national2,
+    ImageAlt: "national2",
+  },
+  {
+    ImageSrc: national3,
+    ImageAlt: "national3",
+  },
+  {
+    ImageSrc: national4,
+    ImageAlt: "national4",
+  },
+  {
+    ImageSrc: national5,
+    ImageAlt: "national5",
+  },
+  {
+    ImageSrc: national6,
+    ImageAlt: "national6",
+  },
+  {
+    ImageSrc: national7,
+    ImageAlt: "national7",
+  },
+  {
+    ImageSrc: national8,
+    ImageAlt: "national8",
+  },
+  {
+    ImageSrc: national9,
+    ImageAlt: "national9",
+  },
+  {
+    ImageSrc: national10,
+    ImageAlt: "national10",
+  },
+];
 ---
 
 <Layout title="Gallery">
-  <div class="mx-auto max-w-7xl mt-48 mb-5">
+  <div class="mx-auto max-w-7xl mb-5 mt-48">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         SUMMER
@@ -102,7 +155,7 @@ const football = [
     </div>
   </div>
   <PhotoCarouselContainer>coming soon!</PhotoCarouselContainer>
-  <div class="mx-auto max-w-7xl mt-48">
+  <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         FOOTBALL SEASON
@@ -119,7 +172,7 @@ const football = [
       ))
     }
   </PhotoCarouselContainer>
-  <div class="mx-auto max-w-7xl mt-48">
+  <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         SIR KNIGHT
@@ -139,7 +192,7 @@ const football = [
   <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        COMPETITION!
+        COMPETITION
       </h2>
     </div>
   </div>
@@ -153,12 +206,21 @@ const football = [
       ))
     }
   </PhotoCarouselContainer>
-  <div class="mx-auto max-w-7xl mt-48">
+  <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         Nationals
       </h2>
     </div>
   </div>
-  <PhotoCarouselContainer>coming soon</PhotoCarouselContainer>
+  <PhotoCarouselContainer>
+    {
+      nationals.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
 </Layout>
