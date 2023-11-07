@@ -11,6 +11,59 @@ import PhotoCarousel from "../components/PhotoCarousel/PhotoCarouselImage.astro"
 import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 import EventsTimeline from "../components/EventsTimeline.astro";
 
+const events = [
+  {
+    day: 22,
+    month: "APR 2024",
+    title: "Spring Training",
+    description: "A-day mornings (technique, tumbling, conditioning)",
+  },
+  {
+    day: 3,
+    month: "MAY 2024",
+    title: "Hip Hop Cherography",
+    description: "More info to come",
+  },
+  {
+    day: 6,
+    month: "JUN 2024",
+    title: "Epic Camp",
+    description:
+      "June 6th-7th (St. George - we would travel on the 5th & return home the evening of the 7th) OR June 10th-11th (Murray) *will be determined by parent vote,",
+  },
+  {
+    day: 22,
+    month: "MAY 2024",
+    title: "No Practice/Moratorium",
+    description:
+      "No practice: May 20th - 31st. Moratorium dates: June 17-21st and July 1st-July 20th",
+  },
+  {
+    day: 24,
+    month: "JUN 2024",
+    title: "Choreography",
+    description: "June 24th-27th & July 22nd-26th (Mon-Fri)",
+  },
+  {
+    day: 29,
+    month: "JUL 2024",
+    title: "Champion Week",
+    description: "July 29th - August 2nd (Mon-Fri) (and more choreo)",
+  },
+  {
+    day: 6,
+    month: "AUG 2024",
+    title: "Golf Tournament",
+    description: "Annual Golf Tournament Fundraiser",
+  },
+  {
+    day: 6,
+    month: "AUG 2024",
+    title: "Golf Tournament",
+    description: "Annual Golf Tournament Fundraiser",
+  },
+];
+
 const dancers = [
   {
     ImageSrc: EllieActionshot,
@@ -48,6 +101,7 @@ const dancers = [
       }
     </PhotoCarouselContainer>
   </div>
+  <Schedule />
   <div class="mx-auto max-w-7xl px-6 sm:mt-5 lg:px-8 pb-10">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -57,8 +111,12 @@ const dancers = [
         *dates and times are subject to change based on choreographer & gym
         availability
       </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        **We will keep the same summer schedule of afternoon practice on Mondays
+        from 3-6pm and morning practice Tuesday-Thursdays from 7-10am to allow
+        for long weekends
+      </p>
     </div>
-    <Schedule />
   </div>
 
   <!-- Logos -->
@@ -141,5 +199,14 @@ const dancers = [
     </div>
   </div> -->
 
-  <EventsTimeline />
+  {
+    events.map((event) => (
+      <EventsTimeline
+        day={event.day}
+        month={event.month}
+        title={event.title}
+        description={event.description}
+      />
+    ))
+  }
 </Layout>
