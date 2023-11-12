@@ -181,6 +181,45 @@ import statePic from "../assets/state-pic.jpg";
         <article class="flex flex-col items-start justify-start">
           <div class="relative w-full">
             <Image
+              src={compPic}
+              alt="Showcase Photo"
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            >
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Jan 5th, 2024</time
+              >
+              <p
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+              >
+                time TBD
+              </p>
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                   Bountiful Invitational Competition
+                </a>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                Bountiful invitational at Bountiful high school. Solo
+                competition will be Jan 5th and team competition will be Jan 6th
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="flex flex-col items-start justify-start">
+          <div class="relative w-full">
+            <Image
               src={statePic}
               alt="Showcase Photo"
               class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
