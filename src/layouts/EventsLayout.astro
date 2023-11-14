@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  title: string;
+  date: string;
+  time: string;
+  description: string;
+  imageSrc: ImageMetadata;
+  imageAlt: string;
+}
+
+const { title, date, time, description, imageSrc, imageAlt } = Astro.props;
+---
+
+<article class="flex flex-col items-start justify-start">
+  <div class="relative w-full">
+    <Image
+      src={imageSrc}
+      alt={imageAlt}
+      class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+    />
+    <div
+      class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+    >
+    </div>
+  </div>
+  <div class="max-w-xl">
+    <div class="mt-8 flex items-center gap-x-4 text-xs">
+      <time datetime="2020-03-16" class="text-gray-500">{date}</time>
+      <p
+        class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
+      >
+        {time}
+      </p>
+    </div>
+    <div class="group relative">
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900">
+        <span class="absolute inset-0"></span>
+        {title}
+      </h3>
+      <p class="mt-5 text-sm leading-6 text-gray-600">
+        {description}
+      </p>
+    </div>
+  </div>
+</article>

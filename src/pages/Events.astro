@@ -11,6 +11,99 @@ import event6 from "../assets/events/event-6.jpg";
 import event7 from "../assets/events/event-7.jpg";
 import event8 from "../assets/events/event-8.jpg";
 import event9 from "../assets/events/event-9.jpg";
+import EventsLayout from "../layouts/EventsLayout.astro";
+
+const events = [
+  {
+    title: "Competition Showcase",
+    date: "Nov 8th, 2023",
+    time: "7:30pm",
+    description:
+      "Lone Peak Field House. Chevaliers will showcase their competition routines in costume. Guest judges will provide live feedback to prepare for competition season!",
+    imageSrc: event1,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "Herriman Invitational Competition",
+    date: "Dec 2nd, 2023",
+    time: "time TBD",
+    description:
+      "Herriman High School. Chevaliers will compete against other 6A schools in the state.",
+    imageSrc: event2,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "UVU Invitational Competition",
+    date: "Dec 16th, 2023",
+    time: "time TBD",
+    description:
+      "Utah Valley University.Chevaliers will compete against other 6A schools in the state.",
+    imageSrc: event3,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "Bountiful Invitational Competition",
+    date: "Jan 5th, 2024",
+    time: "time TBD",
+    description:
+      "Bountiful invitational at Bountiful high school. Solo competition will be Jan 5th and team competition will be Jan 6th",
+    imageSrc: event4,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "REGION",
+    date: "Jan 17th, 2024",
+    time: "time TBD",
+    description:
+      "American Fork High School. Chevaliers will compete against other 6A schools in the state.",
+    imageSrc: event5,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "STATE QUARTER FINALS",
+    date: "Jan 30th, 2024",
+    time: "time TBD",
+    description:
+      "Utah Valley University. Chevaliers will compete against other 6A schools in the state.",
+    imageSrc: event6,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "STATE SEMI FINALS",
+    date: "Feb 1st, 2024",
+    time: "time TBD",
+    description:
+      "Utah Valley University. Chevaliers will compete against other 6A schools in the state.",
+    imageSrc: event2,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "STATE FINALS",
+    date: "Feb 1st, 2024",
+    time: "time TBD",
+    description:
+      "Utah Valley University. Chevaliers will compete against other 6A schools in the state.",
+    imageSrc: event8,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "End of Year Showcase",
+    date: "Mar 13th, 2024",
+    time: "7pm",
+    description:
+      "Lone Peak Field House. The 2023-2024 team will showcase their routines for the last time. The night will also include guest performances from local studios and be a tribute to our graduating seniors.",
+    imageSrc: event9,
+    imageAlt: "Showcase Photo",
+  },
+  {
+    title: "Mini Drill Clinic",
+    date: "Time TBD",
+    time: "",
+    description: "",
+    imageSrc: event7,
+    imageAlt: "Showcase Photo",
+  },
+];
 ---
 
 <Layout title="Events Page">
@@ -31,377 +124,18 @@ import event9 from "../assets/events/event-9.jpg";
       <div
         class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
       >
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event1}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+        {
+          events.map((event) => (
+            <EventsLayout
+              title={event.title}
+              date={event.date}
+              time={event.time}
+              description={event.description}
+              imageSrc={event.imageSrc}
+              imageAlt={event.imageAlt}
             />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Nov 8th, 2023</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                7:30pm
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 Competition Showcase
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Lone Peak Field House. Chevaliers will showcase their
-                competition routines in costume. Guest judges will provide live
-                feedback to prepare for competition season!
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event2}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Dec 2nd, 2023</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 Herriman Invitational Competition
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Herriman High School. Chevaliers will compete against other 6A
-                schools in the state.
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event3}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Dec 16th, 2023</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 UVU Invitational Competition
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Utah Valley University.Chevaliers will compete against other 6A
-                schools in the state.
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event4}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Jan 5th, 2024</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 Bountiful Invitational Competition
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Bountiful invitational at Bountiful high school. Solo
-                competition will be Jan 5th and team competition will be Jan 6th
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event5}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Jan 17th, 2024</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 REGION
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                American Fork High School. Chevaliers will compete against other
-                6A schools in the state.
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event6}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Jan 30th, 2024</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 STATE QUARTER FINALS
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Utah Valley University. Chevaliers will compete against other 6A
-                schools in the state.
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event3}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Feb 1st, 2024</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 STATE SEMI FINALS
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Utah Valley University. Chevaliers will compete against other 6A
-                schools in the state.
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event8}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Feb 1st, 2024</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                time TBD
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 STATE FINALS
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600">
-                Utah Valley University. Chevaliers will compete against other 6A
-                schools in the state.
-              </p>
-            </div>
-          </div>
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event9}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500"
-                >Mar 13th, 2024</time
-              >
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-                7pm
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 End of Year Showcase
-
-                <p class="mt-5 text-sm leading-6 text-gray-600">
-                  Lone Peak Field House. The 2023-2024 team will showcase their
-                  routines for the last time. The night will also include guest
-                  performances from local studios and be a tribute to our
-                  graduating seniors.
-                </p>
-              </h3>
-            </div>
-          </div>
-
-          <!-- More posts... -->
-        </article>
-        <article class="flex flex-col items-start justify-start">
-          <div class="relative w-full">
-            <Image
-              src={event7}
-              alt="Showcase Photo"
-              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div
-              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-            >
-            </div>
-          </div>
-          <div class="max-w-xl">
-            <div class="mt-8 flex items-center gap-x-4 text-xs">
-              <time datetime="2020-03-16" class="text-gray-500">Time TBD</time>
-              <p
-                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-              >
-              </p>
-            </div>
-            <div class="group relative">
-              <h3
-                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-              >
-                <span class="absolute inset-0"></span>
-                 Mini Drill Clinic
-              </h3>
-              <p class="mt-5 text-sm leading-6 text-gray-600"></p>
-            </div>
-          </div>
-        </article>
+          ))
+        }
       </div>
     </div>
   </div>
