@@ -234,7 +234,7 @@ import CompInfo from "../components/CompInfo.astro";
 
     const inputElement = document.getElementById("passwordInput");
     const inputPassword = (inputElement as HTMLInputElement).value;
-    if (inputPassword === "1234") {
+    if (inputPassword === "chevs2324") {
       const passwordPrompt = document.getElementById("passwordPrompt");
       const protectedContent = document.getElementById("protectedContent");
       const submitButtonContainer = document.getElementById(
@@ -267,8 +267,5 @@ import CompInfo from "../components/CompInfo.astro";
 
   document.addEventListener("astro:page-load", bindEvents);
 
-  // If you need any specific DOM state restoration, use the astro:after-swap event
-  document.addEventListener("astro:after-swap", function () {
-    // For example: restore UI state like theme, active tabs, etc.
-  });
+  document.addEventListener("astro:after-swap", function () {});
 </script>
