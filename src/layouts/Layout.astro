@@ -36,13 +36,7 @@ const { title } = Astro.props;
   </head>
   <body class="flex flex-col">
     <Navbar />
-    <div id="search"></div>
-    <script>
-      window.addEventListener("DOMContentLoaded", (event) => {
-        // @ts-ignore
-        new PagefindUI({ element: "#search", showSubResults: true });
-      });
-    </script>
+
     <div class="flex-grow">
       <slot />
     </div>
