@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.svg";
+import Search from "astro-pagefind/components/Search";
 ---
 
 <div>
@@ -73,6 +74,12 @@ import logo from "../assets/logo.svg";
           >Alumni</a
         >
       </div>
+
+      <Search
+        id="search"
+        className="pagefind-ui"
+        uiOptions={{ showImages: false }}
+      />
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
