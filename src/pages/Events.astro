@@ -17,81 +17,71 @@ import EventsLayout from "../layouts/EventsLayout.astro";
 
 const events = [
   // {
-  //   title: "Competition Showcase",
-  //   date: "Nov 15th, 2023",
-  //   time: "7:30pm",
+  //   title: "Herriman Invitational Competition",
+  //   date: "Dec 2nd, 2023",
+  //   time: "9:00pm",
   //   description:
-  //     "Lone Peak Field House. Chevaliers will showcase their competition routines in costume. Guest judges will provide live feedback to prepare for competition season!",
-  //   imageSrc: compShowcase,
+  //     "Herriman High School. Solo competition on Dec 1st in the auditorium, team competition on Dec 2nd in the main gym.",
+  //   imageSrc: herriman,
+  //   imageAlt: "Showcase Photo",
+  // },
+  // {
+  //   title: "UVU Invitational Competition",
+  //   date: "Dec 16th, 2023",
+  //   time: "8:30am",
+  //   description:
+  //     "Utah Valley University. Solo competition will be Dec 15th in Lockhart (small gym at UVU). Team competition will be on the 16th in the UCCU center.",
+  //   imageSrc: UVU,
+  //   imageAlt: "Showcase Photo",
+  // },
+  // {
+  //   title: "Bountiful Invitational Competition",
+  //   date: "Jan 6th, 2024",
+  //   time: "time TBD",
+  //   description:
+  //     "Bountiful Invitational at Bountiful High School. Solo competition will be Jan 5th and team competition will be Jan 6th.",
+  //   imageSrc: bountiful,
+  //   imageAlt: "Showcase Photo",
+  // },
+  // {
+  //   title: "REGION",
+  //   date: "Jan 17th, 2024",
+  //   time: "4:00pm",
+  //   description:
+  //     "American Fork High School. Chevaliers will compete against 5 other schools in our region: American Fork, Pleasant Grove, Lehi, Skyridge, and Westlake.",
+  //   imageSrc: region,
+  //   imageAlt: "Showcase Photo",
+  // },
+  // {
+  //   title: "STATE QUARTER FINALS",
+  //   date: "Jan 30th, 2024",
+  //   time: "time TBD",
+  //   description:
+  //     "Utah Valley University. Chevaliers will compete against other 6A schools in the state to be one of the top 16 schools that qualify for semi-finals.",
+  //   imageSrc: quarter,
+  //   imageAlt: "Showcase Photo",
+  // },
+  // {
+  //   title: "STATE SEMI FINALS",
+  //   date: "Feb 1st, 2024",
+  //   time: "time TBD",
+  //   description:
+  //     "Utah Valley University. Chevaliers will compete against 15 other 6A schools in the state to be one of the top 8 schools that qualify for finals.",
+  //   imageSrc: semiFinals,
+  //   imageAlt: "Showcase Photo",
+  // },
+  // {
+  //   title: "STATE FINALS",
+  //   date: "Feb 2nd, 2024",
+  //   time: "time TBD",
+  //   description:
+  //     "Utah Valley University. Top 8 teams will compete for the state championship title!",
+  //   imageSrc: finals,
   //   imageAlt: "Showcase Photo",
   // },
   {
-    title: "Herriman Invitational Competition",
-    date: "Dec 2nd, 2023",
-    time: "9:00pm",
-    description:
-      "Herriman High School. Solo competition on Dec 1st in the auditorium, team competition on Dec 2nd in the main gym.",
-    imageSrc: herriman,
-    imageAlt: "Showcase Photo",
-  },
-  {
-    title: "UVU Invitational Competition",
-    date: "Dec 16th, 2023",
-    time: "8:30am",
-    description:
-      "Utah Valley University. Solo competition will be Dec 15th in Lockhart (small gym at UVU). Team competition will be on the 16th in the UCCU center.",
-    imageSrc: UVU,
-    imageAlt: "Showcase Photo",
-  },
-  {
-    title: "Bountiful Invitational Competition",
-    date: "Jan 6th, 2024",
-    time: "time TBD",
-    description:
-      "Bountiful Invitational at Bountiful High School. Solo competition will be Jan 5th and team competition will be Jan 6th.",
-    imageSrc: bountiful,
-    imageAlt: "Showcase Photo",
-  },
-  {
-    title: "REGION",
-    date: "Jan 17th, 2024",
-    time: "4:00pm",
-    description:
-      "American Fork High School. Chevaliers will compete against 5 other schools in our region: American Fork, Pleasant Grove, Lehi, Skyridge, and Westlake.",
-    imageSrc: region,
-    imageAlt: "Showcase Photo",
-  },
-  {
-    title: "STATE QUARTER FINALS",
-    date: "Jan 30th, 2024",
-    time: "time TBD",
-    description:
-      "Utah Valley University. Chevaliers will compete against other 6A schools in the state to be one of the top 16 schools that qualify for semi-finals.",
-    imageSrc: quarter,
-    imageAlt: "Showcase Photo",
-  },
-  {
-    title: "STATE SEMI FINALS",
-    date: "Feb 1st, 2024",
-    time: "time TBD",
-    description:
-      "Utah Valley University. Chevaliers will compete against 15 other 6A schools in the state to be one of the top 8 schools that qualify for finals.",
-    imageSrc: semiFinals,
-    imageAlt: "Showcase Photo",
-  },
-  {
-    title: "STATE FINALS",
-    date: "Feb 2nd, 2024",
-    time: "time TBD",
-    description:
-      "Utah Valley University. Top 8 teams will compete for the state championship title!",
-    imageSrc: finals,
-    imageAlt: "Showcase Photo",
-  },
-  {
     title: "End of Year Showcase",
     date: "Feb 15th, 2024",
-    time: "7pm",
     description:
       "Lone Peak Field House. The 2023-2024 team will showcase their routines for the last time. The night will also include guest performances from local studios and be a tribute to our graduating seniors.",
     imageSrc: EOYShowcase,
@@ -100,7 +90,6 @@ const events = [
   {
     title: "Mini Drill Clinic",
     date: "Date TBD",
-    time: "Time TBD",
     description: "",
     imageSrc: miniClinic,
     imageAlt: "Showcase Photo",
@@ -131,7 +120,6 @@ const events = [
             <EventsLayout
               title={event.title}
               date={event.date}
-              time={event.time}
               description={event.description}
               imageSrc={event.imageSrc}
               imageAlt={event.imageAlt}
