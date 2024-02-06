@@ -1,7 +1,7 @@
 ---
 import DirectoryTab from "../components/DirectoryTab.astro";
 import Layout from "../layouts/Layout.astro";
-import DrillCalendar from "../assets/documents/drill-calendar-nov-feb.pdf";
+import DrillCalendar from "../assets/documents/drill-calendar-sept-feb.pdf";
 
 import Nationals from "../assets/documents/updated-nationals.pdf";
 import Register from "../assets/documents/RegisterMyAthlete.pdf";
@@ -208,7 +208,8 @@ import CompInfo from "../components/CompInfo.astro";
       tab.removeEventListener("click", tabClick);
       tab.addEventListener("click", tabClick);
 
-      function tabClick() {
+      function tabClick(e: { preventDefault: () => void }) {
+        e.preventDefault();
         tabs.forEach((t) => t.classList.remove("text-gray-900", "bg-white"));
         tabs.forEach((t) => t.children[1].classList.remove("bg-primary"));
         tabs.forEach((t) => t.children[1].classList.add("bg-transparent"));
