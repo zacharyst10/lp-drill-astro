@@ -87,80 +87,80 @@ const dancers = [
 ---
 
 <Layout title="Auditions">
-  <div class="pt-24">
-    <PhotoCarouselContainer>
-      {
-        dancers.map((dancer) => (
-          <PhotoCarousel
-            ImageSrc={dancer.ImageSrc}
-            ImageAlt={dancer.ImageAlt}
-          />
-        ))
-      }
-    </PhotoCarouselContainer>
-  </div>
-  <div class="relative bg-white">
-    <div
-      class="mx-auto max-w-md px-6 text-center sm:max-w-3xl lg:max-w-7xl lg:px-8"
-    >
-      <p
-        class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl"
-      >
-        Links for Upcoming Auditions
-      </p>
+  <div class="container px-5 mx-auto">
+    <div class="pt-24">
+      <PhotoCarouselContainer>
+        {
+          dancers.map((dancer) => (
+            <PhotoCarousel
+              ImageSrc={dancer.ImageSrc}
+              ImageAlt={dancer.ImageAlt}
+            />
+          ))
+        }
+      </PhotoCarouselContainer>
+    </div>
+    <div class="relative bg-white">
+      <div class="text-center">
+        <p
+          class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+        >
+          Links for Upcoming Auditions
+        </p>
 
-      <div class="mt-20">
-        <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-          <CardLink
-            title="Audition Application"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeBnViHzJTqpbGqo2VhNqSmTOefU9V4YBIMpSczC-bZObFq4Q/viewform"
-          />
-          <CardLink
-            title="Teacher Recommendation Form"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf1H3HgpHtK7MTJkRiz79We10UyQ7VkEjWPV-VBVS0Ec3L92A/viewform"
-          />
-          <CardLink
-            title="Drill Team Constitution & Policies"
-            href="https://docs.google.com/document/d/1VQAI0T4k7SPqXaSZ5uEh3XXEb9UtQMjyeXRnmZUWiQk/edit"
-          />
-          <CardLink
-            title="Absence & Demerit Policy"
-            href="https://docs.google.com/document/d/1iYcOT4oT67FJVoY5dyw_3x5ZbOwsRnx_-hkbbJ_wkzI/edit#heading=h.suawozawez0m"
-          />
-          <CardLink
-            title="Audition Packet"
-            href="https://www.canva.com/design/DAFbI3Ibwn0/X02Ojsi9spcB3HfjqWu4Xw/edit"
-          />
+        <div class="mt-20">
+          <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            <CardLink
+              title="Audition Application"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeBnViHzJTqpbGqo2VhNqSmTOefU9V4YBIMpSczC-bZObFq4Q/viewform"
+            />
+            <CardLink
+              title="Teacher Recommendation Form"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf1H3HgpHtK7MTJkRiz79We10UyQ7VkEjWPV-VBVS0Ec3L92A/viewform"
+            />
+            <CardLink
+              title="Drill Team Constitution & Policies"
+              href="https://docs.google.com/document/d/1VQAI0T4k7SPqXaSZ5uEh3XXEb9UtQMjyeXRnmZUWiQk/edit"
+            />
+            <CardLink
+              title="Absence & Demerit Policy"
+              href="https://docs.google.com/document/d/1iYcOT4oT67FJVoY5dyw_3x5ZbOwsRnx_-hkbbJ_wkzI/edit#heading=h.suawozawez0m"
+            />
+            <CardLink
+              title="Audition Packet"
+              href="https://www.canva.com/design/DAFbI3Ibwn0/X02Ojsi9spcB3HfjqWu4Xw/edit"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <Schedule />
-  <div class="mx-auto max-w-7xl px-6 sm:mt-5 lg:px-8 pb-10">
-    <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        PLAN AHEAD for the 2024-2025 Drill Year
-      </h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">
-        *dates and times are subject to change based on choreographer & gym
-        availability
-      </p>
-      <p class="mt-6 text-lg leading-8 text-gray-600">
-        **We will keep the same summer schedule of afternoon practice on Mondays
-        from 3-6pm and morning practice Tuesday-Thursdays from 7-10am to allow
-        for long weekends
-      </p>
+    <Schedule />
+    <div class="sm:mt-5 pb-10">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          PLAN AHEAD for the 2024-2025 Drill Year
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          *dates and times are subject to change based on choreographer & gym
+          availability
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          **We will keep the same summer schedule of afternoon practice on
+          Mondays from 3-6pm and morning practice Tuesday-Thursdays from 7-10am
+          to allow for long weekends
+        </p>
+      </div>
+      {
+        events.map((event) => (
+          <EventsTimeline
+            day={event.day}
+            month={event.month}
+            title={event.title}
+            description={event.description}
+          />
+        ))
+      }
     </div>
   </div>
-  {
-    events.map((event) => (
-      <EventsTimeline
-        day={event.day}
-        month={event.month}
-        title={event.title}
-        description={event.description}
-      />
-    ))
-  }
 </Layout>
