@@ -1,0 +1,142 @@
+---
+import logo from "../../public/logo.jpg";
+
+const dancers = [
+  {
+    name: "Aiden Green",
+    image: logo.src,
+  },
+  {
+    name: "Aubrey Allan",
+    image: logo.src,
+  },
+  {
+    name: "Avery Jones",
+    image: logo.src,
+  },
+  {
+    name: "Avonlea Earnshaw",
+    image: logo.src,
+  },
+  {
+    name: "Brittney Cormier",
+    image: logo.src,
+  },
+  {
+    name: "Brooklyn Smith",
+    image: logo.src,
+  },
+  {
+    name: "Cate Arnold",
+    image: logo.src,
+  },
+  {
+    name: "Chloe Nicol",
+    image: logo.src,
+  },
+  {
+    name: "Gwen LeRoy",
+    image: logo.src,
+  },
+  {
+    name: "Hadlee Owens",
+    image: logo.src,
+  },
+  {
+    name: "Hannah Liechty",
+    image: logo.src,
+  },
+  {
+    name: "Haylee Lopez",
+    image: logo.src,
+  },
+  {
+    name: "Kambri Pearson",
+    image: logo.src,
+  },
+  {
+    name: "Kate Esplin",
+    image: logo.src,
+  },
+  {
+    name: "Kate Ward",
+    image: logo.src,
+  },
+  {
+    name: "Katie Krog",
+    image: logo.src,
+  },
+  {
+    name: "Lilyan Shaw",
+    image: logo.src,
+  },
+  {
+    name: "Louella Zurcher",
+    image: logo.src,
+  },
+  {
+    name: " Marina Allen",
+    image: logo.src,
+  },
+  {
+    name: "Mayzie Taylor",
+    image: logo.src,
+  },
+  {
+    name: "Micah Dahl",
+    image: logo.src,
+  },
+  {
+    name: "Mikayla Maughan",
+    image: logo.src,
+  },
+  {
+    name: "Mollie Smith",
+    image: logo.src,
+  },
+  {
+    name: "Quinlan Wallace",
+    image: logo.src,
+  },
+  {
+    name: "Serena Hilton",
+    image: logo.src,
+  },
+  {
+    name: "Sophie Ward",
+    image: logo.src,
+  },
+  {
+    name: "Tessa Smith",
+    image: logo.src,
+  },
+];
+---
+
+<div class="bg-white py-12 sm:py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Congratulations to the 2024-2025 team!
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        We are excited to announce the following dancers as our Chevaliers for
+        next season! It's going to be an incredible year!
+      </p>
+    </div>
+    <ul
+      role="list"
+      class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-start sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+    >
+      {
+        dancers.map((dancer) => (
+          <li class="">
+            <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-primary">
+              {dancer.name}
+            </h3>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
