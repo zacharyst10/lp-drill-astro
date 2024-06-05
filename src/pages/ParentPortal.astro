@@ -138,62 +138,57 @@ import CompInfo from "../components/CompInfo.astro";
     </div>
     <div class="p-3 mt-5">
       <div id="calendars" class="tab-content">
-        <div class="md:hidden sm:block">
-          <h1 class="text-lg">
-            Click the link below to download the Drill Calendar 👇
-          </h1>
-          <Attachment
-            docSize="438kb"
-            docTitle="DrillCalendar"
-            docUrl={DrillCalendar}
-          />
-        </div>
-        <div class="md:block hidden">
-          **updated on 11/15/23
-          <iframe src={DrillCalendar} class="w-full h-screen"></iframe>
+        <div class="block">
+          **updated on 06/05/24
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/1sa_C_BQzoXyN-XrlgnQeSKUc3RXvAoFoHIZ5X3P0wnI/edit#gid=0"
+            class="h-screen w-full"></iframe>
         </div>
       </div>
       <div id="fee" class="tab-content text-left hidden">
-        <Timeline />
+        <iframe
+          src="https://docs.google.com/spreadsheets/u/0/d/16M8ku_JBd47Er37TTFqf2PVsTZa6fRVIlOxTzBxTRHk/htmlview"
+          class="h-screen w-full"></iframe>
       </div>
-      <div id="nationals" class="tab-content hidden">
-        <div class="md:hidden sm:block">
-          <h1 class="text-lg">
-            Click the link below to download nationals info 👇
-          </h1>
-          <Attachment docSize="991kb" docTitle="Nationals" docUrl={Nationals} />
-        </div>
-        <div class="md:block hidden">
-          <iframe src={Nationals} class="w-full h-screen"></iframe>
-        </div>
+    </div>
+    <div id="nationals" class="tab-content hidden">
+      <div class="md:hidden sm:block">
+        <h1 class="text-lg">
+          Click the link below to download nationals info 👇
+        </h1>
+        <Attachment docSize="991kb" docTitle="Nationals" docUrl={Nationals} />
       </div>
-      <div id="directory" class="tab-content hidden">
-        <DirectoryTab />
+      <div class="md:block hidden">
+        <iframe src={Nationals} class="w-full h-screen"></iframe>
       </div>
-      <div id="schedule" class="tab-content hidden pb-5 text-left">
-        <Schedule />
+    </div>
+    <div id="directory" class="tab-content hidden">
+      <DirectoryTab />
+    </div>
+    <div id="schedule" class="tab-content hidden pb-5 text-left">
+      <Schedule />
+    </div>
+    <div id="register" class="tab-content hidden">
+      <div class="md:hidden sm:block">
+        <h1 class="text-lg">
+          Click the link below to download instructions on how to register 👇
+        </h1>
+        <Attachment
+          docSize="49kb"
+          docTitle="RegisterMyAthlete"
+          docUrl={Register}
+        />
       </div>
-      <div id="register" class="tab-content hidden">
-        <div class="md:hidden sm:block">
-          <h1 class="text-lg">
-            Click the link below to download instructions on how to register 👇
-          </h1>
-          <Attachment
-            docSize="49kb"
-            docTitle="RegisterMyAthlete"
-            docUrl={Register}
-          />
-        </div>
-        <div class="md:block hidden">
-          <iframe src={Register} class="w-full h-screen"></iframe>
-        </div>
+      <div class="md:block hidden">
+        <iframe src={Register} class="w-full h-screen"></iframe>
       </div>
-      <div id="comp-info" class="tab-content hidden pb-5 text-left">
-        <CompInfo />
-      </div>
+    </div>
+    <div id="comp-info" class="tab-content hidden pb-5 text-left">
+      <CompInfo />
     </div>
   </div>
 </Layout>
+
 <script>
   function bindEvents() {
     const form = document.getElementById("passwordForm");
