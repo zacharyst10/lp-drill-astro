@@ -14,7 +14,8 @@ const { ImageSrc, ImageAlt } = Astro.props;
 >
   <span aria-hidden="true" class="absolute inset-0">
     <Image
-      loading={"lazy"}
+      loading="lazy"
+      decoding="async"
       src={ImageSrc}
       alt={ImageAlt}
       class="h-full w-full object-cover object-center"
