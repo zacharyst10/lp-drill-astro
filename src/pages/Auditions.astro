@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import EllieActionshot from "../assets/actionshots/ellie-harrison-actionshot.webp";
 import HayleeActionshot from "../assets/actionshots/haylee-lopez-actionshot.webp";
-
 import MarinaActionshot from "../assets/actionshots/marina-allen-actionshot.webp";
 import BrynleeActionshot from "../assets/actionshots/brynlee-harrison-actionshot.webp";
 import TessaActionshot from "../assets/actionshots/tessa-smith-actionshot.webp";
@@ -10,55 +9,86 @@ import Schedule from "../components/AuditionSchedule.astro";
 import PhotoCarousel from "../components/PhotoCarousel/PhotoCarouselImage.astro";
 import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 import EventsTimeline from "../components/EventsTimeline.astro";
-import Card from "../components/Card.astro";
 import CardLink from "../components/cardLink.astro";
 
 const events = [
   {
-    day: 22,
-    month: "APR 2024",
-    title: "Spring Training",
-    description:
-      " April 22-May 20 A-day mornings: 6:00-7:15am in the Maroon Gym  (technique, tumbling, conditioning)",
+    day: 25,
+    month: "MAR 2025",
+    title: "Drill Audition Clinic",
+    description: "5:00-9:00pm in the Maroon Gym",
   },
   {
-    day: 4,
-    month: "MAY 2024",
-    title: "Hip Hop Choreography",
-    description: "Hip Hop choreography with Maddie Wood Larsen from 7-11am",
+    day: 26,
+    month: "MAR 2025",
+    title: "Drill Team Auditions",
+    description: "5:00-9:00pm in the Maroon Gym",
   },
   {
-    day: 6,
-    month: "JUN 2024",
-    title: "Epic Camp",
-    description:
-      "June 6th-7th (St. George - we would travel on the 5th & return home the evening of the 7th) OR June 10th-11th (Murray) *will be determined by parent vote.",
+    day: 7,
+    month: "APR 2025",
+    title: "Spring Training Begins",
+    description: "April 7 - May 13 A Day Mornings 6:30-7:20AM",
   },
   {
-    day: 22,
-    month: "MAY 2024",
-    title: "No Practice/Moratorium",
-    description:
-      "We will not have practice from May 20th-31st, June 17-21st and July 1st-20th",
+    day: 9,
+    month: "MAY 2025",
+    title: "Routine Audition Day",
+    description: "Routine auditions for team placement",
   },
   {
-    day: 24,
-    month: "JUN 2024",
-    title: "Choreography",
-    description:
-      "June 24th-28th & July 22nd-26th (Mon-Fri). We will be learning 2 competition routines on these weeks and may have longer rehearsal times and an additional practice on Friday. ",
+    day: 14,
+    month: "MAY 2025",
+    title: "Home Routine Choreography",
+    description: "Learning home routine choreography",
+  },
+  {
+    day: 18,
+    month: "MAY 2025",
+    title: "Moratorium",
+    description: "No Practice May 18-31",
+  },
+  {
+    day: 11,
+    month: "JUN 2025",
+    title: "Epic Drill Camp",
+    description: "June 11-13 Epic Drill Camp in St. George",
+  },
+  {
+    day: 19,
+    month: "JUN 2025",
+    title: "State Routine Choreography",
+    description: "June 19-20 First state routine choreography session",
+  },
+  {
+    day: 26,
+    month: "JUN 2025",
+    title: "State Routine Choreography",
+    description: "June 26-27 Second state routine choreography session",
+  },
+  {
+    day: 30,
+    month: "JUN 2025",
+    title: "Summer Moratorium",
+    description: "No Practice June 30 - July 26",
   },
   {
     day: 29,
-    month: "JUL 2024",
-    title: "Champion Week",
-    description: "July 29th - August 2nd (Mon-Fri) (and more choreo)",
+    month: "JUL 2025",
+    title: "Golf Tournament Fundraiser",
+    description: "Annual fundraising event",
   },
   {
-    day: 6,
-    month: "AUG 2024",
-    title: "Golf Tournament",
-    description: "Annual Golf Tournament Fundraiser at Fox Hollow Golf Course",
+    day: 31,
+    month: "JUL 2025",
+    title: "State Routine Choreography",
+    description: "July 31 - August 1 Final state routine choreography session",
+  },
+  {
+    day: 4,
+    month: "AUG 2025",
+    title: "Champion Week",
+    description: "August 4-9 Champion Week activities and preparation",
   },
 ];
 
@@ -105,30 +135,30 @@ const dancers = [
         <p
           class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl"
         >
-          Links for Upcoming Auditions
+          2025-2026 Audition Information
         </p>
 
         <div class="mt-20">
           <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
             <CardLink
-              title="Audition Application"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeBnViHzJTqpbGqo2VhNqSmTOefU9V4YBIMpSczC-bZObFq4Q/viewform"
+              title="2025-2026 Audition Application"
+              href="[UPDATE WITH NEW FORM LINK]"
             />
             <CardLink
-              title="Teacher Recommendation Form"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf1H3HgpHtK7MTJkRiz79We10UyQ7VkEjWPV-VBVS0Ec3L92A/viewform"
+              title="Teacher Recommendation Form (Due March 25)"
+              href="[UPDATE WITH NEW FORM LINK]"
             />
             <CardLink
               title="Drill Team Constitution & Policies"
-              href="https://docs.google.com/document/d/1VQAI0T4k7SPqXaSZ5uEh3XXEb9UtQMjyeXRnmZUWiQk/edit"
+              href="[UPDATE WITH NEW READ-ONLY LINK]"
             />
             <CardLink
               title="Absence & Demerit Policy"
-              href="https://docs.google.com/document/d/1iYcOT4oT67FJVoY5dyw_3x5ZbOwsRnx_-hkbbJ_wkzI/edit#heading=h.suawozawez0m"
+              href="[UPDATE WITH NEW LINK]"
             />
             <CardLink
-              title="Audition Packet"
-              href="https://www.canva.com/design/DAFbI3Ibwn0/X02Ojsi9spcB3HfjqWu4Xw/edit"
+              title="2025-2026 Audition Packet"
+              href="[UPDATE WITH NEW PACKET LINK]"
             />
           </div>
         </div>
@@ -139,16 +169,19 @@ const dancers = [
     <div class="sm:mt-5 pb-10">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          PLAN AHEAD for the 2024-2025 Drill Year
+          PLAN AHEAD for the 2025-2026 Drill Year
         </h2>
         <p class="mt-6 text-lg leading-8 text-gray-600">
-          *dates and times are subject to change based on choreographer & gym
+          *Dates and times are subject to change based on choreographer & gym
           availability
         </p>
         <p class="mt-6 text-lg leading-8 text-gray-600">
-          **We will keep the same summer schedule of afternoon practice on
-          Mondays from 3-6pm and morning practice Tuesday-Thursdays from 7-10am
-          to allow for long weekends
+          **Summer Practice Schedule: - Mondays: 5:00-8:00pm - Tuesday &
+          Wednesday: 7:00-10:00am
+        </p>
+        <p class="mt-4 text-lg leading-8 text-red-600">
+          Important: Mandatory Parent Meeting - Date TBD New Team Meeting - Date
+          TBD (March 27 or April 7)
         </p>
       </div>
       {

@@ -1,98 +1,106 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import bountiful from "../assets/events/bountiful.jpg";
 import compShowcase from "../assets/events/comp-showcase.jpg";
 import EOYShowcase from "../assets/events/end-of-year-showcase.jpg";
-import finals from "../assets/events/finals.jpg";
-import herriman from "../assets/events/herriman.jpg";
 import miniClinic from "../assets/events/mini-drill.jpg";
 import region from "../assets/events/region.jpg";
-import semiFinals from "../assets/events/semi-finals.jpg";
 import state from "../assets/events/finals.jpg";
 import UVU from "../assets/events/uvu.jpg";
-import quarter from "../assets/events/quarter-finals.jpg";
 
 import EventsLayout from "../layouts/EventsLayout.astro";
 
 const events = [
-  // {
-  //   title: "Herriman Invitational Competition",
-  //   date: "Dec 2nd, 2023",
-  //   time: "9:00pm",
-  //   description:
-  //     "Herriman High School. Solo competition on Dec 1st in the auditorium, team competition on Dec 2nd in the main gym.",
-  //   imageSrc: herriman,
-  //   imageAlt: "Showcase Photo",
-  // },
-  // {
-  //   title: "UVU Invitational Competition",
-  //   date: "Dec 16th, 2023",
-  //   time: "8:30am",
-  //   description:
-  //     "Utah Valley University. Solo competition will be Dec 15th in Lockhart (small gym at UVU). Team competition will be on the 16th in the UCCU center.",
-  //   imageSrc: UVU,
-  //   imageAlt: "Showcase Photo",
-  // },
-  // {
-  //   title: "Bountiful Invitational Competition",
-  //   date: "Jan 6th, 2024",
-  //   time: "time TBD",
-  //   description:
-  //     "Bountiful Invitational at Bountiful High School. Solo competition will be Jan 5th and team competition will be Jan 6th.",
-  //   imageSrc: bountiful,
-  //   imageAlt: "Showcase Photo",
-  // },
-  // {
-  //   title: "REGION",
-  //   date: "Jan 17th, 2024",
-  //   time: "4:00pm",
-  //   description:
-  //     "American Fork High School. Chevaliers will compete against 5 other schools in our region: American Fork, Pleasant Grove, Lehi, Skyridge, and Westlake.",
-  //   imageSrc: region,
-  //   imageAlt: "Showcase Photo",
-  // },
-  // {
-  //   title: "STATE QUARTER FINALS",
-  //   date: "Jan 30th, 2024",
-  //   time: "time TBD",
-  //   description:
-  //     "Utah Valley University. Chevaliers will compete against other 6A schools in the state to be one of the top 16 schools that qualify for semi-finals.",
-  //   imageSrc: quarter,
-  //   imageAlt: "Showcase Photo",
-  // },
-  // {
-  //   title: "STATE SEMI FINALS",
-  //   date: "Feb 1st, 2024",
-  //   time: "time TBD",
-  //   description:
-  //     "Utah Valley University. Chevaliers will compete against 15 other 6A schools in the state to be one of the top 8 schools that qualify for finals.",
-  //   imageSrc: semiFinals,
-  //   imageAlt: "Showcase Photo",
-  // },
-  // {
-  //   title: "STATE FINALS",
-  //   date: "Feb 2nd, 2024",
-  //   time: "time TBD",
-  //   description:
-  //     "Utah Valley University. Top 8 teams will compete for the state championship title!",
-  //   imageSrc: finals,
-  //   imageAlt: "Showcase Photo",
-  // },
   {
-    title: "End of Year Showcase",
-    date: "Feb 15th, 2024",
-    description:
-      "Lone Peak Field House. The 2023-2024 team will showcase their routines for the last time. The night will also include guest performances from local studios and be a tribute to our graduating seniors.",
-    imageSrc: EOYShowcase,
-    imageAlt: "Showcase Photo",
+    title: "Premier Drill Classic",
+    date: "December 7, 2024",
+    description: "Competition at Utah Valley University (UVU)",
+    imageSrc: UVU,
+    imageAlt: "UVU Competition Photo",
   },
   {
-    title: "Mini Drill Clinic",
-    date: "Date TBD",
-    description: "",
+    title: "SUU Thunderbird Invitational",
+    date: "December 14, 2024",
+    description: "Competition at Southern Utah University",
+    imageSrc: compShowcase, // Using placeholder image - replace with actual SUU image
+    imageAlt: "SUU Competition Photo",
+  },
+  {
+    title: "Rocky Mountain Drill Invitational",
+    date: "January 11, 2025",
+    description: "Rocky Mountain Drill Competition",
+    imageSrc: compShowcase, // Using placeholder image
+    imageAlt: "Competition Photo",
+  },
+  {
+    title: "Region Competition",
+    date: "January 16, 2025",
+    description: "Regional competition event",
+    imageSrc: region,
+    imageAlt: "Region Competition Photo",
+  },
+  {
+    title: "State Drill Competition",
+    date: "January 27-28 & February 1, 2025",
+    description: "State competition events",
+    imageSrc: state,
+    imageAlt: "State Competition Photo",
+  },
+  {
+    title: "Nationals Send Off",
+    date: "February 5, 2025",
+    description: "Send off celebration before nationals",
+    imageSrc: compShowcase, // Using placeholder image
+    imageAlt: "Send Off Photo",
+  },
+  {
+    title: "Dance Team Union Nationals",
+    date: "February 11-17, 2025",
+    description: "National competition in Orlando",
+    imageSrc: compShowcase, // Using placeholder image
+    imageAlt: "Nationals Photo",
+  },
+  {
+    title: "End of Year Banquet",
+    date: "February 20, 2025",
+    description: "Celebration of the year's achievements",
+    imageSrc: EOYShowcase,
+    imageAlt: "Banquet Photo",
+  },
+  {
+    title: "Drill Open Gym",
+    date: "March 12, 13, 19, 20, 2025",
+    description: "Open gym sessions for drill practice",
     imageSrc: miniClinic,
-    imageAlt: "Showcase Photo",
+    imageAlt: "Open Gym Photo",
+  },
+  {
+    title: "Audition Clinic",
+    date: "March 25, 2025",
+    description: "Clinic for 2025-2026 team auditions",
+    imageSrc: miniClinic,
+    imageAlt: "Audition Clinic Photo",
+  },
+  {
+    title: "2025-2026 Team Auditions",
+    date: "March 26, 2025",
+    description: "Auditions for the 2025-2026 Lone Peak Drill Team",
+    imageSrc: miniClinic,
+    imageAlt: "Auditions Photo",
+  },
+  {
+    title: "2025-2026 Team Training Starts",
+    date: "April 7, 2025",
+    description: "Beginning of training for the new season",
+    imageSrc: compShowcase, // Using placeholder image
+    imageAlt: "Team Training Photo",
+  },
+  {
+    title: "Sir Knight Pageant",
+    date: "April 16, 2025",
+    description: "Annual Sir Knight Pageant event",
+    imageSrc: compShowcase, // Using placeholder image
+    imageAlt: "Sir Knight Pageant Photo",
   },
 ];
 ---
@@ -108,8 +116,8 @@ const events = [
         </h2>
         <p class="mt-6 text-lg leading-8 text-gray-600">
           Join us for the exciting events we have lined up. We have a variety of
-          competitions, showcases, and clinics, and we can't wait to see you
-          there!
+          competitions, showcases, and clinics throughout the season, including
+          nationals in Orlando!
         </p>
       </div>
       <div
