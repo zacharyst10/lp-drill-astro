@@ -31,7 +31,7 @@ import logo from "../assets/logo.svg";
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke="currentColor"
+            stroke="black"
             aria-hidden="true"
           >
             <path
@@ -76,7 +76,7 @@ import logo from "../assets/logo.svg";
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
-          href="/ParentPortal"
+          href="https://lphs-parent-portal.vercel.app"
           class="text-sm font-semibold leading-6 text-black"
           >Parent Portal <span aria-hidden="true">&rarr;</span></a
         >
@@ -148,7 +148,7 @@ import logo from "../assets/logo.svg";
               </div>
               <div class="py-6">
                 <a
-                  href="/ParentPortal"
+                  href="https://lphs-parent-portal.vercel.app"
                   class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >Parent Portal</a
                 >
@@ -167,13 +167,14 @@ import logo from "../assets/logo.svg";
 
       menuToggle?.addEventListener("click", () => {
         mobileMenu?.classList.toggle("hidden");
+        menuToggle!.style.display = "none";
       });
 
       closeMenu?.addEventListener("click", () => {
         mobileMenu?.classList.add("hidden");
+        menuToggle!.style.display = "flex";
       });
     }
-
     document.addEventListener("DOMContentLoaded", () => {
       initializeMenu();
     });

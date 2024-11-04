@@ -1,12 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import compShowcase from "../assets/events/comp-showcase.jpg";
-import EOYShowcase from "../assets/events/end-of-year-showcase.jpg";
-import miniClinic from "../assets/events/mini-drill.jpg";
-import region from "../assets/events/region.jpg";
-import state from "../assets/events/finals.jpg";
-import UVU from "../assets/events/uvu.jpg";
+import drillClassic from "../assets/events/1-premier-drill-classic.jpg";
+import thunderbird from "../assets/events/2-suu-thunderbird.jpg";
+import rockyMountain from "../assets/events/3-rocky-mountain.jpg";
+import regionComp from "../assets/events/4-region-competition.jpg";
+import stateDrill from "../assets/events/5-state-drill.jpg";
+import nationalsSendOff from "../assets/events/6-nationals-send-off.jpg";
+import danceTeam from "../assets/events/7-dance-team-union-nationals.jpg";
+import banquet from "../assets/events/8-end-of-year-banquet.jpg";
+import openGym from "../assets/events/9-open-gym.jpg";
+import auditions from "../assets/events/10-auditions.jpg";
+import teamTraining from "../assets/events/11-team-training.jpg";
+import sirKnight from "../assets/events/12-sir-knight.jpg";
 
 import EventsLayout from "../layouts/EventsLayout.astro";
 
@@ -15,91 +21,84 @@ const events = [
     title: "Premier Drill Classic",
     date: "December 7, 2024",
     description: "Competition at Utah Valley University (UVU)",
-    imageSrc: UVU,
+    imageSrc: drillClassic,
     imageAlt: "UVU Competition Photo",
   },
   {
     title: "SUU Thunderbird Invitational",
     date: "December 14, 2024",
     description: "Competition at Southern Utah University",
-    imageSrc: compShowcase, // Using placeholder image - replace with actual SUU image
+    imageSrc: thunderbird,
     imageAlt: "SUU Competition Photo",
   },
   {
     title: "Rocky Mountain Drill Invitational",
     date: "January 11, 2025",
     description: "Rocky Mountain Drill Competition",
-    imageSrc: compShowcase, // Using placeholder image
+    imageSrc: rockyMountain,
     imageAlt: "Competition Photo",
   },
   {
     title: "Region Competition",
     date: "January 16, 2025",
     description: "Regional competition event",
-    imageSrc: region,
+    imageSrc: regionComp,
     imageAlt: "Region Competition Photo",
   },
   {
     title: "State Drill Competition",
     date: "January 27-28 & February 1, 2025",
     description: "State competition events",
-    imageSrc: state,
+    imageSrc: stateDrill,
     imageAlt: "State Competition Photo",
   },
   {
     title: "Nationals Send Off",
     date: "February 5, 2025",
     description: "Send off celebration before nationals",
-    imageSrc: compShowcase, // Using placeholder image
+    imageSrc: nationalsSendOff,
     imageAlt: "Send Off Photo",
   },
   {
     title: "Dance Team Union Nationals",
     date: "February 11-17, 2025",
     description: "National competition in Orlando",
-    imageSrc: compShowcase, // Using placeholder image
+    imageSrc: danceTeam,
     imageAlt: "Nationals Photo",
   },
   {
     title: "End of Year Banquet",
     date: "February 20, 2025",
     description: "Celebration of the year's achievements",
-    imageSrc: EOYShowcase,
+    imageSrc: banquet,
     imageAlt: "Banquet Photo",
   },
   {
     title: "Drill Open Gym",
     date: "March 12, 13, 19, 20, 2025",
     description: "Open gym sessions for drill practice",
-    imageSrc: miniClinic,
+    imageSrc: openGym,
     imageAlt: "Open Gym Photo",
   },
   {
-    title: "Audition Clinic",
-    date: "March 25, 2025",
-    description: "Clinic for 2025-2026 team auditions",
-    imageSrc: miniClinic,
-    imageAlt: "Audition Clinic Photo",
-  },
-  {
     title: "2025-2026 Team Auditions",
-    date: "March 26, 2025",
+    date: "March 25-26, 2025",
     description: "Auditions for the 2025-2026 Lone Peak Drill Team",
-    imageSrc: miniClinic,
+    imageSrc: auditions,
     imageAlt: "Auditions Photo",
   },
   {
     title: "2025-2026 Team Training Starts",
     date: "April 7, 2025",
     description: "Beginning of training for the new season",
-    imageSrc: compShowcase, // Using placeholder image
+    imageSrc: teamTraining,
     imageAlt: "Team Training Photo",
   },
   {
     title: "Sir Knight Pageant",
     date: "April 16, 2025",
     description: "Annual Sir Knight Pageant event",
-    imageSrc: compShowcase, // Using placeholder image
+    imageSrc: sirKnight,
     imageAlt: "Sir Knight Pageant Photo",
   },
 ];
