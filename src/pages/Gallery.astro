@@ -1,20 +1,29 @@
 ---
 import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 import Layout from "../layouts/Layout.astro";
-import summer1 from "../assets/gallery/summer/summer-1.jpg";
-import summer2 from "../assets/gallery/summer/summer-2.jpg";
-import summer3 from "../assets/gallery/summer/summer-3.jpg";
-import summer4 from "../assets/gallery/summer/summer-4.jpg";
-import summer5 from "../assets/gallery/summer/summer-5.jpg";
-import comp1 from "../assets/gallery/competition/comp-1.jpg";
-import comp2 from "../assets/gallery/competition/comp-2.jpg";
-import comp3 from "../assets/gallery/competition/comp-3.jpg";
-import comp4 from "../assets/gallery/competition/comp-4.jpg";
-import sir2 from "../assets/gallery/sir-knight/sir-knight-2.jpg";
-import sir1 from "../assets/gallery/sir-knight/sir-knight-1.jpg";
-import sir3 from "../assets/gallery/sir-knight/sir-knight-3.jpg";
-import sir4 from "../assets/gallery/sir-knight/sir-knight-4.jpg";
-import sir5 from "../assets/gallery/sir-knight/sir-knight-5.jpg";
+import champs1 from "../assets/gallery/champs/champs-1.jpg";
+import champs2 from "../assets/gallery/champs/champs-2.jpg";
+import champs3 from "../assets/gallery/champs/champs-3.jpg";
+import champs4 from "../assets/gallery/champs/champs-4.jpg";
+import champs5 from "../assets/gallery/champs/champs-5.jpg";
+import champs6 from "../assets/gallery/champs/champs-6.jpg";
+import champs7 from "../assets/gallery/champs/champs-7.jpg";
+import champs8 from "../assets/gallery/champs/champs-8.jpg";
+import champs9 from "../assets/gallery/champs/champs-9.jpg";
+import champs10 from "../assets/gallery/champs/champs-10.jpg";
+import champs11 from "../assets/gallery/champs/champs-11.jpg";
+import champs12 from "../assets/gallery/champs/champs-12.jpg";
+import champs13 from "../assets/gallery/champs/champs-13.jpg";
+import champs14 from "../assets/gallery/champs/champs-14.jpg";
+import champs15 from "../assets/gallery/champs/champs-15.jpg";
+import champs16 from "../assets/gallery/champs/champs-16.jpg";
+import champs17 from "../assets/gallery/champs/champs-17.jpg";
+import champs18 from "../assets/gallery/champs/champs-18.jpg";
+import champs19 from "../assets/gallery/champs/champs-19.jpg";
+import champs20 from "../assets/gallery/champs/champs-20.jpg";
+import champs21 from "../assets/gallery/champs/champs-21.jpg";
+import champs22 from "../assets/gallery/champs/champs-22.jpg";
+import champs23 from "../assets/gallery/champs/champs-23.jpg";
 import football1 from "../assets/gallery/football/football-1.jpg";
 import football2 from "../assets/gallery/football/football-2.jpg";
 import football3 from "../assets/gallery/football/football-3.jpg";
@@ -22,6 +31,33 @@ import football4 from "../assets/gallery/football/football-4.jpg";
 import football5 from "../assets/gallery/football/football-5.jpg";
 import football6 from "../assets/gallery/football/football-6.jpg";
 import football7 from "../assets/gallery/football/football-7.jpg";
+import football8 from "../assets/gallery/football/football-8.jpg";
+import football9 from "../assets/gallery/football/football-9.jpg";
+import football10 from "../assets/gallery/football/football-10.jpg";
+import football11 from "../assets/gallery/football/football-11.jpg";
+import football12 from "../assets/gallery/football/football-12.jpg";
+import football13 from "../assets/gallery/football/football-13.jpg";
+import football14 from "../assets/gallery/football/football-14.jpg";
+import epic1 from "../assets/gallery/epic/epic-1.jpg";
+import epic2 from "../assets/gallery/epic/epic-2.jpg";
+import epic3 from "../assets/gallery/epic/epic-3.jpg";
+import epic4 from "../assets/gallery/epic/epic-4.jpg";
+import epic5 from "../assets/gallery/epic/epic-5.jpg";
+import epic6 from "../assets/gallery/epic/epic-6.jpg";
+import comp1 from "../assets/gallery/competition/comp-1.jpg";
+import comp2 from "../assets/gallery/competition/comp-2.jpg";
+import comp3 from "../assets/gallery/competition/comp-3.jpg";
+import comp4 from "../assets/gallery/competition/comp-4.jpg";
+import comp5 from "../assets/gallery/competition/comp-5.jpg";
+import comp6 from "../assets/gallery/competition/comp-6.jpg";
+import comp7 from "../assets/gallery/competition/comp-7.jpg";
+
+import sir2 from "../assets/gallery/sir-knight/sir-knight-2.jpg";
+import sir1 from "../assets/gallery/sir-knight/sir-knight-1.jpg";
+import sir3 from "../assets/gallery/sir-knight/sir-knight-3.jpg";
+import sir4 from "../assets/gallery/sir-knight/sir-knight-4.jpg";
+import sir5 from "../assets/gallery/sir-knight/sir-knight-5.jpg";
+
 import national1 from "../assets/gallery/nationals/nationals-1.jpg";
 import national2 from "../assets/gallery/nationals/nationals-2.jpg";
 import national3 from "../assets/gallery/nationals/nationals-3.jpg";
@@ -32,31 +68,93 @@ import national7 from "../assets/gallery/nationals/nationals-7.jpg";
 import national8 from "../assets/gallery/nationals/nationals-8.jpg";
 import national9 from "../assets/gallery/nationals/nationals-9.jpg";
 import national10 from "../assets/gallery/nationals/nationals-10.jpg";
+import national11 from "../assets/gallery/nationals/nationals-11.jpg";
+import national12 from "../assets/gallery/nationals/nationals-12.jpg";
+import national13 from "../assets/gallery/nationals/nationals-13.jpg";
+import national14 from "../assets/gallery/nationals/nationals-14.jpg";
+import national15 from "../assets/gallery/nationals/nationals-15.jpg";
+import national16 from "../assets/gallery/nationals/nationals-16.jpg";
+import national17 from "../assets/gallery/nationals/nationals-17.jpg";
+import national18 from "../assets/gallery/nationals/nationals-18.jpg";
+import national19 from "../assets/gallery/nationals/nationals-19.jpg";
+import national20 from "../assets/gallery/nationals/nationals-20.jpg";
+import national21 from "../assets/gallery/nationals/nationals-21.jpg";
+
+import missDrill1 from "../assets/gallery/miss-drill/miss-drill-1.jpg";
+import missDrill2 from "../assets/gallery/miss-drill/miss-drill-2.jpg";
+import missDrill3 from "../assets/gallery/miss-drill/miss-drill-3.jpg";
+import missDrill4 from "../assets/gallery/miss-drill/miss-drill-4.jpg";
+import missDrill5 from "../assets/gallery/miss-drill/miss-drill-5.jpg";
+import missDrill6 from "../assets/gallery/miss-drill/miss-drill-6.jpg";
+import parade1 from "../assets/gallery/parade/parade-1.jpg";
+import parade2 from "../assets/gallery/parade/parade-2.jpg";
+import parade3 from "../assets/gallery/parade/parade-3.jpg";
+import parade4 from "../assets/gallery/parade/parade-4.jpg";
+import parade5 from "../assets/gallery/parade/parade-5.jpg";
+import parade6 from "../assets/gallery/parade/parade-6.jpg";
+import parade7 from "../assets/gallery/parade/parade-7.jpg";
+import misc1 from "../assets/gallery/misc/misc-1.jpg";
+import misc2 from "../assets/gallery/misc/misc-2.jpg";
+import misc3 from "../assets/gallery/misc/misc-3.jpg";
+import misc4 from "../assets/gallery/misc/misc-4.jpg";
+import misc5 from "../assets/gallery/misc/misc-5.jpg";
+import misc6 from "../assets/gallery/misc/misc-6.jpg";
+import misc7 from "../assets/gallery/misc/misc-7.jpg";
 import PhotoCarouselImage from "../components/PhotoCarousel/PhotoCarouselImage.astro";
 
-const summer = [
+const champs = [
   {
-    ImageSrc: summer1,
-    ImageAlt: "summer1",
+    ImageSrc: champs1,
+    ImageAlt: "champs1",
   },
   {
-    ImageSrc: summer2,
-    ImageAlt: "summer2",
+    ImageSrc: champs2,
+    ImageAlt: "champs2",
   },
   {
-    ImageSrc: summer3,
-    ImageAlt: "summer3",
+    ImageSrc: champs3,
+    ImageAlt: "champs3",
   },
   {
-    ImageSrc: summer4,
-    ImageAlt: "summer4",
+    ImageSrc: champs4,
+    ImageAlt: "champs4",
   },
-  {
-    ImageSrc: summer5,
-    ImageAlt: "summer5",
-  },
+  { ImageSrc: champs5, ImageAlt: "champs5" },
+  { ImageSrc: champs6, ImageAlt: "champs6" },
+  { ImageSrc: champs7, ImageAlt: "champs7" },
+  { ImageSrc: champs8, ImageAlt: "champs8" },
+  { ImageSrc: champs9, ImageAlt: "champs9" },
+  { ImageSrc: champs10, ImageAlt: "champs10" },
+  { ImageSrc: champs11, ImageAlt: "champs11" },
+  { ImageSrc: champs12, ImageAlt: "champs12" },
+  { ImageSrc: champs13, ImageAlt: "champs13" },
+  { ImageSrc: champs14, ImageAlt: "champs14" },
+  { ImageSrc: champs15, ImageAlt: "champs15" },
+  { ImageSrc: champs16, ImageAlt: "champs16" },
+  { ImageSrc: champs17, ImageAlt: "champs17" },
+  { ImageSrc: champs18, ImageAlt: "champs18" },
+  { ImageSrc: champs19, ImageAlt: "champs19" },
+  { ImageSrc: champs20, ImageAlt: "champs20" },
+  { ImageSrc: champs21, ImageAlt: "champs21" },
+  { ImageSrc: champs22, ImageAlt: "champs22" },
+  { ImageSrc: champs23, ImageAlt: "champs23" },
 ];
-
+const epic = [
+  { ImageSrc: epic1, ImageAlt: "epic1" },
+  { ImageSrc: epic2, ImageAlt: "epic2" },
+  { ImageSrc: epic3, ImageAlt: "epic3" },
+  { ImageSrc: epic4, ImageAlt: "epic4" },
+  { ImageSrc: epic5, ImageAlt: "epic5" },
+  { ImageSrc: epic6, ImageAlt: "epic6" },
+];
+const missDrill = [
+  { ImageSrc: missDrill1, ImageAlt: "missDrill1" },
+  { ImageSrc: missDrill2, ImageAlt: "missDrill2" },
+  { ImageSrc: missDrill3, ImageAlt: "missDrill3" },
+  { ImageSrc: missDrill4, ImageAlt: "missDrill4" },
+  { ImageSrc: missDrill5, ImageAlt: "missDrill5" },
+  { ImageSrc: missDrill6, ImageAlt: "missDrill6" },
+];
 const comp = [
   {
     ImageSrc: comp1,
@@ -73,6 +171,18 @@ const comp = [
   {
     ImageSrc: comp4,
     ImageAlt: "comp4",
+  },
+  {
+    ImageSrc: comp5,
+    ImageAlt: "comp5",
+  },
+  {
+    ImageSrc: comp6,
+    ImageAlt: "comp6",
+  },
+  {
+    ImageSrc: comp7,
+    ImageAlt: "comp7",
   },
 ];
 
@@ -128,6 +238,34 @@ const football = [
     ImageSrc: football7,
     ImageAlt: "football7",
   },
+  {
+    ImageSrc: football8,
+    ImageAlt: "football8",
+  },
+  {
+    ImageSrc: football9,
+    ImageAlt: "football9",
+  },
+  {
+    ImageSrc: football10,
+    ImageAlt: "football10",
+  },
+  {
+    ImageSrc: football11,
+    ImageAlt: "football11",
+  },
+  {
+    ImageSrc: football12,
+    ImageAlt: "football12",
+  },
+  {
+    ImageSrc: football13,
+    ImageAlt: "football13",
+  },
+  {
+    ImageSrc: football14,
+    ImageAlt: "football14",
+  },
 ];
 
 const nationals = [
@@ -171,6 +309,110 @@ const nationals = [
     ImageSrc: national10,
     ImageAlt: "national10",
   },
+  {
+    ImageSrc: national11,
+    ImageAlt: "national11",
+  },
+  {
+    ImageSrc: national12,
+    ImageAlt: "national12",
+  },
+  {
+    ImageSrc: national13,
+    ImageAlt: "national13",
+  },
+  {
+    ImageSrc: national14,
+    ImageAlt: "national14",
+  },
+  {
+    ImageSrc: national15,
+    ImageAlt: "national15",
+  },
+  {
+    ImageSrc: national16,
+    ImageAlt: "national16",
+  },
+  {
+    ImageSrc: national17,
+    ImageAlt: "national17",
+  },
+  {
+    ImageSrc: national18,
+    ImageAlt: "national18",
+  },
+  {
+    ImageSrc: national19,
+    ImageAlt: "national19",
+  },
+  {
+    ImageSrc: national20,
+    ImageAlt: "national20",
+  },
+  {
+    ImageSrc: national21,
+    ImageAlt: "national21",
+  },
+];
+const parades = [
+  {
+    ImageSrc: parade1,
+    ImageAlt: "parade1",
+  },
+  {
+    ImageSrc: parade2,
+    ImageAlt: "parade2",
+  },
+  {
+    ImageSrc: parade3,
+    ImageAlt: "parade3",
+  },
+  {
+    ImageSrc: parade4,
+    ImageAlt: "parade4",
+  },
+  {
+    ImageSrc: parade5,
+    ImageAlt: "parade5",
+  },
+  {
+    ImageSrc: parade6,
+    ImageAlt: "parade6",
+  },
+  {
+    ImageSrc: parade7,
+    ImageAlt: "parade7",
+  },
+];
+const misc = [
+  {
+    ImageSrc: misc1,
+    ImageAlt: "misc1",
+  },
+  {
+    ImageSrc: misc2,
+    ImageAlt: "misc2",
+  },
+  {
+    ImageSrc: misc3,
+    ImageAlt: "misc3",
+  },
+  {
+    ImageSrc: misc4,
+    ImageAlt: "misc4",
+  },
+  {
+    ImageSrc: misc5,
+    ImageAlt: "misc5",
+  },
+  {
+    ImageSrc: misc6,
+    ImageAlt: "misc6",
+  },
+  {
+    ImageSrc: misc7,
+    ImageAlt: "misc7",
+  },
 ];
 ---
 
@@ -178,13 +420,13 @@ const nationals = [
   <div class="mx-auto max-w-7xl mb-5 mt-48">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        SUMMER
+        Champions Week
       </h2>
     </div>
   </div>
   <PhotoCarouselContainer>
     {
-      summer.map((image) => (
+      champs.map((image) => (
         <PhotoCarouselImage
           ImageSrc={image.ImageSrc}
           ImageAlt={image.ImageAlt}
@@ -195,7 +437,7 @@ const nationals = [
   <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        FOOTBALL SEASON
+        Football Season
       </h2>
     </div>
   </div>
@@ -212,7 +454,43 @@ const nationals = [
   <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        SIR KNIGHT
+        Epic
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>
+    {
+      epic.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
+
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        Miss Drill
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>
+    {
+      missDrill.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
+
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        Sir Knight
       </h2>
     </div>
   </div>
@@ -229,7 +507,7 @@ const nationals = [
   <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        COMPETITION
+        Competition
       </h2>
     </div>
   </div>
@@ -243,16 +521,51 @@ const nationals = [
       ))
     }
   </PhotoCarouselContainer>
+
   <div class="mx-auto max-w-7xl">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        NATIONALS
+        Nationals
       </h2>
     </div>
   </div>
   <PhotoCarouselContainer>
     {
       nationals.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        Parades
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>
+    {
+      parades.map((image) => (
+        <PhotoCarouselImage
+          ImageSrc={image.ImageSrc}
+          ImageAlt={image.ImageAlt}
+        />
+      ))
+    }
+  </PhotoCarouselContainer>
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        Miscellaneous
+      </h2>
+    </div>
+  </div>
+  <PhotoCarouselContainer>
+    {
+      misc.map((image) => (
         <PhotoCarouselImage
           ImageSrc={image.ImageSrc}
           ImageAlt={image.ImageAlt}

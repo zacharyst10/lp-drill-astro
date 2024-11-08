@@ -9,15 +9,16 @@ interface Props {
 const { ImageSrc, ImageAlt } = Astro.props;
 ---
 
-<div
-  class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 xl:w-auto"
->
-  <span aria-hidden="true" class="absolute inset-0">
+<div class="group relative w-72 flex-shrink-0 xl:w-full">
+  <div class="relative aspect-square w-full overflow-hidden rounded-lg">
     <Image
-      loading={"lazy"}
+      loading="lazy"
+      decoding="async"
       src={ImageSrc}
       alt={ImageAlt}
       class="h-full w-full object-cover object-center"
+      width={288}
+      height={288}
     />
-  </span>
+  </div>
 </div>
