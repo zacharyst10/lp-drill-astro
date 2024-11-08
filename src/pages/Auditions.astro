@@ -10,6 +10,10 @@ import PhotoCarousel from "../components/PhotoCarousel/PhotoCarouselImage.astro"
 import PhotoCarouselContainer from "../components/PhotoCarousel/PhotoCarouselContainer.astro";
 import EventsTimeline from "../components/EventsTimeline.astro";
 import CardLink from "../components/cardLink.astro";
+import AuditionActionshot1 from "../assets/actionshots/audition-actionshot-1.jpg";
+import AuditionActionshot2 from "../assets/actionshots/audition-actionshot-2.jpg";
+import AuditionActionshot3 from "../assets/actionshots/audition-actionshot-3.jpg";
+import AuditionActionshot4 from "../assets/actionshots/audition-actionshot-4.jpg";
 
 const events = [
   {
@@ -29,6 +33,12 @@ const events = [
     month: "APR 2025",
     title: "Spring Training Begins",
     description: "April 7 - May 13 A Day Mornings 6:30-7:20AM",
+  },
+  {
+    day: 9,
+    month: "APR 2025",
+    title: "New Team Meeting",
+    description: "Welcome meeting for all new drill team members",
   },
   {
     day: 9,
@@ -94,25 +104,21 @@ const events = [
 
 const dancers = [
   {
-    ImageSrc: EllieActionshot,
-    ImageAlt: "Ellie Harrison Action Shot",
+    ImageSrc: AuditionActionshot1,
+    ImageAlt: "Audition Action Shot 1",
   },
   {
-    ImageSrc: HayleeActionshot,
-    ImageAlt: "Haylee Lopez Action Shot",
+    ImageSrc: AuditionActionshot2,
+    ImageAlt: "Audition Action Shot 2",
   },
   {
-    ImageSrc: MarinaActionshot,
-    ImageAlt: "Marina Allen Action Shot",
+    ImageSrc: AuditionActionshot3,
+    ImageAlt: "Audition Action Shot 3",
   },
   {
-    ImageSrc: BrynleeActionshot,
-    ImageAlt: "Brynlee Harrison Action Shot",
+    ImageSrc: AuditionActionshot4,
+    ImageAlt: "Audition Action Shot 4",
   },
-  // {
-  //   ImageSrc: TessaActionshot,
-  //   ImageAlt: "Tessa Smith Action Shot",
-  // },
 ];
 ---
 
@@ -179,10 +185,10 @@ const dancers = [
           **Summer Practice Schedule: - Mondays: 5:00-8:00pm - Tuesday &
           Wednesday: 7:00-10:00am
         </p>
-        <p class="mt-4 text-lg leading-8 text-red-600">
+        <!-- <p class="mt-4 text-lg leading-8 text-red-600">
           Important: Mandatory Parent Meeting - Date TBD New Team Meeting - Date
           TBD (March 27 or April 7)
-        </p>
+        </p> -->
       </div>
       {
         events.map((event) => (
